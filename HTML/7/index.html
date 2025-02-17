@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action=""><!-- get: low amount of data send to server or post: large amount of data -->
+        <div>
+            <label for="user">enter your username</label>
+            <input id="user" type="text" name="username" placeholder="enter you name" autofocus>
+        </div>
+
+        <div>
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="male">MALE</label>
+            <input type="radio" name="gender" value="female" id="female"><!-- same "name" is imp for selecting one radio button at a time -->
+            <label for="female">FEMALE</label>
+        </div>    
+
+        <div>
+            <input type="checkbox" name="subs" id="subscirbe" value="yes">
+            <label for="subscirbe">Subsribe to my channel</label>
+        </div>
+
+        <div>
+            <label for="comm">Add your comment</label>
+            <textarea id="comm" name="comment" rows="4" cols="50">Add you comment</textarea>
+            <!-- label's "for" contain name of input's "id"  -->
+        </div>
+
+        <div>
+            <select name="Character" id="char">
+                <option value="zoro">ZORO</option>
+                <option value="naruto">NARUTO</option>
+                <option value="hinata">HINATA</option>
+            </select>
+        </div>
+    </form>
+</body>
+</html>
