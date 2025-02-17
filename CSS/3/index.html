@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        /* Element Selector */
+        div{
+            color: aqua;
+            background-color: blueviolet;
+        }
+
+        /* Id Selector */
+        #red{
+            color: rgb(255, 0, 0);
+            background-color: rgb(165, 226, 43);
+        }
+
+        /*Class Selector */
+        .yellow{
+            color: rgb(255, 251, 0);
+            background-color: blueviolet;
+        }
+
+        /* Child Selector */
+        #red>p{
+            background-color: black;
+        }
+
+        /* Descendant Selector */
+        .yellow span{
+            background-color: crimson;
+        }
+
+        /* Universal Selector */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Pseudo Selector */
+        a:visited{
+            color: black;
+        }
+        a:hover{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div>first div</div>
+
+    <div id="red">
+        second div
+        <p>i am child para inside div</p>
+    </div>
+
+    <div class="yellow">
+        third div
+        <span>i am span inside yellowdiv</span>
+    </div>
+
+    <a href="https://www.google.com">Google</a>
+</body>
+</html>
