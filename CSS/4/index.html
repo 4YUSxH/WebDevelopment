@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            background-color: aquamarine;
+        }
+        .box1{
+            color: yellow;
+            padding: 10px;
+            margin: 25px;/* Margin appears outside the content */
+            border: 5px solid blue;
+            height: 200px;/* this height includes padding and border in it, and if it is not border-box than height 200px is only content's height not include padding and border in it */
+            box-sizing: border-box;/* it does not include margin for calculating width and height of a content, if border-box value is eliminated than total height or widhth of content is calculated by adding margin+padding+border */                  
+        }
+        .box2{
+            color: red;
+            margin: 25px;/* margin Collapse */
+            border: 5px solid blue;
+            height: 200px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">I am box</div>
+    <div class="box box2">I am another box</div>
+</body>
+</html>
