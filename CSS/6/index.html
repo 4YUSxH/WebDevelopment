@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity(Cascade Algo)</title>
+    <style>
+       .yellow{
+            color: yellow;
+        }
+
+        .cred{
+            color: red;
+        }
+
+        .cpurple{
+            color: purple;
+        }/* Computed by using Position and order of appearance */
+
+        [data-x=A]{
+            background-color: blue;
+        }/* Attribute Selector */
+
+        .imp{
+            background-color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="yellow cred cpurple">This Is Specificity</h1>
+    <h1 style="color: brown;" class="yellow cred cpurple">Inline Specificity</h1>
+    <h1 class="yellow cred cpurple" data-x="A">Attribute Selector</h1>
+    <h1 style="background-color: chartreuse;" class="imp">Important</h1>
+</body>
+</html>
+<!-- 
+Cascade algo: compute which property will be applied 
+1.> Position and order of appearance: the order in which your CSS rules appear(when selectors are same types)
+2.> Specificity: an algorithm that determines which CSS selector has the strongest match(Inline Style > ID Selector > Class or Attribute Selector > Element Selector > Universal Selector)
+3.> Origin: the order in which CSS appears and where it comes from, whether that is a browser style, CSS from a browser extension, or your authored CSS
+4.> Importance: some CSS rules are weighted more heavily than others, especially with the !important rule type
+-->
+
+<!-- 
+Specificity Calculation:
+    ->Universal Selector: 0
+    ->Element selectors and pseudo-elements: 1
+    ->Class selectors, attribute selectors, and pseudo-classes: 10
+    ->ID selectors: 100
+    ->Inline styles: 1000
+
+Ex:
+    a.zoroclass.naruto-class[href]:hover  ->Specificity: 1(element selector) +10(class selector) +10(class selector) +10(attribute selector) +10(pseudo selector) =41
+    {
+    color: red;
+    }
+-->
