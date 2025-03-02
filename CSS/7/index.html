@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizing Units</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html{/* root element */
+            font-size: 20px;
+        }
+
+        .box{
+            box-sizing: border-box;
+            border: 2px solid black;
+            /* width: 1366px; px is not responsive */
+            /*width: 100vw; vw: full of viewport width */
+            width: 80vw;
+            margin: auto;/* it will centre box(div) only when element is block */
+            background-color: aqua;
+        }
+
+        .conatainer{
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+            min-height: 70vh;/* conatainer should maintian 80vh height and height will be automatically adjust after more(greater then 80vh) content is put in the conatiner and win-width is same but opposite of min-height */
+            height: 50vh;
+            margin: 20px auto;
+            background-color: aqua;
+            font-size: 16px;
+        }
+
+        .conatainer > div{
+            /* font-size: p will inherit conatainer font size */
+            /* font-size: 2em; 2 time multiple of its inherit value hence 32px */
+            /* font-size: 2rem; 2 time multiple of root element's font size hence 40px */
+            font-size: 2rm;/* 40px cause of inheritance, html>container,box>p(this is how properties are inherited in this code) */
+            /* vmin: whose unit(width or height) is minimum in device(tablets, phone, desktop, etc)
+            vmax: whose unit(width or height) is maximum in device(tablets, phone, desktop, etc) */
+            border: 2px solid red;
+            width: 50%;/* width of p is 50% of its parent(conatiner) */
+        }
+
+        .conatainer > div >div{
+            font-size: 2rm;
+            border: 2px solid rgb(72, 255, 0);
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+     <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units -->
+    <div class="box">
+        This is a box
+    </div>
+
+    <div class="conatainer">
+        This is a conatainer
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolore saepe eveniet quaerat alias veritatis ducimus. Fugiat officia explicabo minima. Neque atque, et ducimus dolorum esse veniam. Exercitationem, placeat aperiam?
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci accusamus eaque repellat blanditiis non, nemo ullam at distinctio corrupti? Saepe atque assumenda labore eveniet accusantium dolores impedit natus veritatis nulla?
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
