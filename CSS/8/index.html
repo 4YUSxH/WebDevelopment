@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .box{
+            border: 2px solid blue;
+            display: inline;
+            margin: 20px;/* no margin from top cause for add top margin use display:inline-block(obey all postion changing properties) */           
+            padding: 40px;/* no padding from top cause inline */
+            padding-top: 100px;/* will not repect */
+        }
+
+        .box1{
+            border: 2px solid rgb(255, 0, 0);
+            display: inline-block;
+            margin: 20px;/* added margin from top cause inline-block */
+            padding: 40px;/* added padding from top cause inline-block */
+            padding-top: 100px;
+        }
+
+        .box2{
+            border: 2px solid rgb(255, 0, 0);
+            display: none;/* remove box2 */
+        }
+
+        .box3{
+            border: 2px solid rgb(255, 0, 0);
+            visibility: hidden;/* hide box3 */
+        }
+    </style>
+</head>
+<body>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/display -->
+     <div class="box">
+        I am box
+     </div>
+     <div class="box">
+        I am also box
+     </div><!-- default div is block -->
+
+     <div class="box1">
+        I am box1
+     </div>
+     <div class="box1">
+        I am also box1
+     </div>
+     
+     <div class="box2">
+        This is box2
+     </div>
+
+     <div class="box3">
+        This is box3
+     </div>
+
+     <span>I am span</span><!-- default span is inline -->
+     <span>and i am good span</span>
+</body>
+</html>
