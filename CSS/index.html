@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadows and Outlines</title>
+    <style>
+        .box{
+            border: 2px solid black;
+            padding:34px;
+            box-shadow:  5px 15px 5px #70a711;
+        }
+
+        .text{
+            text-shadow: 10px 5px 3px #d400ff;
+            outline: 2px blue solid;/* it is not part of box model */
+            border: 2px violet solid;
+            outline-offset: 10px;/* we can set offset of outline */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        This is box
+    </div>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sit est praesentium quaerat aut tempore, odio sed animi? Iste aut inventore, eaque veritatis possimus assumenda aspernatur quisquam deserunt obcaecati suscipit?</p>
+</body>
+</html>
