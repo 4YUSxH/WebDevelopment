@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+
+        }
+        :root{
+            --bgcolor: rgba(0, 255, 115, 0.327);
+            --tcolor: rgb(137, 43, 226);
+        }
+
+        nav{
+            position: sticky;
+            background-color: var(--bgcolor);
+        }
+        nav ul{
+            display: flex;
+            justify-content: right;
+            padding: 7px;
+            list-style: none;
+        }
+        nav ul li{
+            color: var(--tcolor);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: larger;
+            font-weight: bolder;
+            margin: 25px;
+        }
+        nav ul a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="#"><li>Home</li></a>
+            <a href="#"><li>Products</li></a>
+            <a href="#"><li>Categories</li></a>
+            <a href="#"><li>Contact Us</li></a>
+        </ul>
+    </nav>
+</body>
+</html>
