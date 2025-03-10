@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More On Selector</title>
+    <style>
+        .box:first-child{/* This will applied when .box is first child of it's parent(boxex) */
+            background-color: aquamarine;
+        }
+
+        .box:nth-child(2)::first-line{
+            background-color: yellowgreen;
+            /* nth element is counted from bottom(bottom to top) */
+        }
+
+        .boxex::before{
+            content: "I am good boi";
+        }
+        .boxex::after{
+            content: "I am learning WD";
+            color: tomato;
+        }/* They are pseudo elements not selectors */
+    </style>
+</head>
+<body>
+    <div class="boxex">
+        <div class="box">Box1</div>
+        <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ut, dolore eveniet nostrum doloribus numquam maxime atque commodi nihil tempora similique eos voluptatem, aut qui. Deserunt, dicta dolorem! Recusandae </div>
+        <div class="box">Box3</div>
+    </div>
+</body>
+</html>
