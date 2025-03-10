@@ -1,11 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Position Property</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 2000px;
+      }
+      .parent{
+        height: 100%;
+      }
+
+      .box {
+        width: 150px;
+        height: 150px;
+        margin: 25px;
+        padding: 3px;
+      }
+
+      .box1 {
+        background-color: aqua;
+        position: static; /* Default */
+      }
+
+      .box2 {
+        background-color: blueviolet;
+        position: relative;
+        top: -75px;
+        left: 50px;
+        z-index: -1;
+      }
+
+      .box3 {
+        position: absolute;
+        /* abosulte take place it's neartest position ancestor element in this box3 chack>div(parent)(no position) then>body(no position or static(deafault)) then>html(no position but last element in code) */
+        background-color: skyblue;
+        top: 10px; /* w.r.t. html */
+        left: 400px; /* w.r.t. html */
+        /* if div(parent) have position then box3 ancestor is div(parent) */
+      }
+
+      .box4 {
+        background-color: plum;
+        position: fixed;
+        bottom: 155px;
+        left: 100px;
+      }
+
+      .box5 {
+        background-color: rgb(98, 253, 114);
+        position: sticky;/* its also have relativity(ancestor) concept */
+        top: 0px;
+        height: 50px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="box box1">Box1</div>
+      <div class="box box2">Box2</div>
+      <div class="box box3">Box3</div>
+      <div class="box box4">Box4</div>
+      <div class="box box5">Box5</div>
+    </div>
+  </body>
 </html>
+<!-- why my box5 doesn't stick on top of the page btw i am using position:sticky in box5 css
+
+The issue you're encountering with position: sticky not working on your .box5 is likely due to a missing ancestor with a defined height. For position: sticky to function properly, the element must have a containing block (usually the viewport or a parent container with a height). Sticky positioning works when the element scrolls within its parent until a certain point, but for that to happen, the element needs to be within a scrollable context.
+
+Fix:
+ Ensure the parent container (.parent) has a defined height or allows for scrolling. This is because sticky positioning relies on the scrollable area of the parent container.
+ Make sure the viewport is tall enough for scrolling so that the sticky behavior can be observed.
+
+Try adding height: 100%; or min-height: 100vh; to the .parent element to allow scrolling, and make sure your viewport is long enough. 
+
+Conditions for sticky to work:
+    1. The element must have a scrollable parent (this could be the viewport or a parent container with some height).
+    2. The element should not be outside a scrolling context. For example, it must be inside a container that can scroll (or the whole page needs to be scrollable).
+
+Code:
+.parent {
+  height: 100%; /* Ensure it's tall enough to allow scrolling */
+}
+
+body {
+  height: 2000px; /* Make the body tall enough to enable scrolling */
+}
+-->
+
+<!-- Imp asf:
+    Exception: transform, filter, or perspective properties can also make an element appear as positioned -->
