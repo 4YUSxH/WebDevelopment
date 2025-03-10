@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Float & Clear</title>
+    <style>
+        .cards{
+            border: 2px solid black;
+            /* display: flow-root remove overflow */
+        }
+        img{
+            float: right; /* it will float on its right side */
+        }
+        .card{
+            border: 2px solid red;
+        }
+        .card:nth-child(3){
+            background-color: beige;
+            clear:right /* no content in its left side */
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="cards">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg" width="250" alt="image">
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquam in nisi ipsum. Laboriosam, ipsum. Debitis alias at ex provident aut, quae quasi dolore est.</p>
+        </div>
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur tempora dolor corrupti nam, distinctio tenetur blanditiis magnam, id aperiam quaerat labore, doloremque culpa! Expedita at debitis pariatur minus, deleniti magni earum rerum distinctio eaque inventore quisquam mollitia possimus, iste culpa quaerat ut dicta modi ab, harum illo dolores! Ea neque minima doloremque cumque quam voluptatibus natus repudiandae ad tempore. Optio necessitatibus sed odio quae adipisci ratione dolore! Maiores, odio provident? Sint, sit dolore laudantium impedit perspiciatis tempore exercitationem fugiat inventore officia perferendis suscipit minima aut ducimus. Rem odit ad distinctio odio fugit ipsa enim temporibus, atque delectus aperiam iure! Molestias doloribus ipsa animi maxime laudantium similique architecto rem provident officia nostrum culpa, quisquam, magnam fugit labore! Ipsa neque dicta provident nam ut commodi id veniam sit impedit inventore? Quia asperiores atque quaerat modi, nobis adipisci vel cumque placeat fuga error temporibus dignissimos officia fugit officiis illum possimus commodi aliquid rerum eligendi. Repellendus deserunt veniam nesciunt eos magnam, aliquid minus incidunt non maxime soluta nulla voluptatibus sed sapiente reprehenderit commodi suscipit totam unde odio molestiae illo, error, possimus autem quaerat. Deserunt minus numquam, similique fugit at iure nemo odio, tenetur aperiam ab quibusdam officia! Molestias, placeat? Maxime iste quo labore eligendi. Illum dolorem explicabo reprehenderit. Dignissimos molestiae nostrum est iusto ad minima modi aspernatur et quis. Sunt ea minus velit veritatis expedita, libero ipsam aspernatur officiis voluptate ipsa dolorem, omnis accusantium ducimus maiores aliquid molestiae voluptates dolor asperiores. Aperiam eius ad quo debitis. At reprehenderit assumenda saepe amet placeat autem!</p>
+        </div>
 </body>
 </html>
+<!-- It is used when flexbox doesn't exist in CSS -->
