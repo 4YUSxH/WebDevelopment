@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative Units: em</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 100px;
+        }
+        #first{
+            background-color: aqua;
+            height: 300px;
+            width: 300px;
+            font-size: 25px;
+        }
+        #second{
+            background-color: royalblue;
+            height: 50%;
+            width: 70%;
+            font-size: 2em;/* 2em: twice of its parent i.e. first div, hence 1em is equals to parent's font size*/
+            /*  relative unit: em
+                sizing relative to the parent element's font size */
+        }
+    </style>
+</head>
+<body>
+    body
+    <div id="first">
+        first div
+        <div id="second">
+            second div
+        </div>
+    </div>
+</body>
+</html>

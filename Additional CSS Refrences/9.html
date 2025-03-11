@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Property</title>
+    <!-- used to align elements left, none(default), or right in parent's body -->
+    <style>
+        .container{
+            height: 111px;
+            width: 395px;
+            border: 1px solid black;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        #box1{
+            background-color: red;
+            float: right;
+        }
+        #box2{
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box"></div>
+        <div id="box2" class="box"></div>
+    </div>
+</body>
+</html>

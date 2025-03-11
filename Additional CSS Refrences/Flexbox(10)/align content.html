@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align Content</title>
+    <!-- used to align total(all) item across cross axis -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            margin: 5px;
+        }
+
+        .container{
+            height: 400px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        #box1{
+            background-color: aqua;
+        }
+        #box2{
+            background-color: red;
+        }
+        #box3{
+            background-color: blueviolet;
+        }
+
+        .container1{
+            height: 400px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: space-between;
+        }
+        #box1{
+            background-color: aqua;
+        }
+        #box2{
+            background-color: red;
+        }
+        #box3{
+            background-color: blueviolet;
+        }
+
+        .container2{
+            height: 400px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: space-around;/* default */
+        }
+        #box1{
+            background-color: aqua;
+        }
+        #box2{
+            background-color: red;
+        }
+        #box3{
+            background-color: blueviolet;
+        }
+
+        .container3{
+            height: 400px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: start;
+        }
+        #box1{
+            background-color: aqua;
+        }
+        #box2{
+            background-color: red;
+        }
+        #box3{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+    </div><hr>
+    <div class="container1">
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+    </div><hr>
+    <div class="container2">
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+    </div><hr>
+    <div class="container3">
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+    </div><hr>
+</body>
+</html>

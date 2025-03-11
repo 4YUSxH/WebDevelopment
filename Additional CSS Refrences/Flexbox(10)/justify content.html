@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justify Content</title>
+    <!-- used to align itmes in main axis -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            margin: 5px;
+        }
+
+        .container{
+            height: 150px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: flex-start;/* default */
+        }
+        #box1{
+            background-color: aqua;
+        }
+        #box2{
+            background-color: red;
+        }
+        #box3{
+            background-color: blueviolet;
+        }
+
+        .container1{
+            height: 150px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: flex-end;
+        }
+        #box5{
+            background-color: aqua;
+        }
+        #box6{
+            background-color: red;
+        }
+        #box7{
+            background-color: blueviolet;
+        }
+
+        .container2{
+            height: 150px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: center;
+        }
+        #box9{
+            background-color: aqua;
+        }
+        #box10{
+            background-color: red;
+        }
+        #box11{
+            background-color: blueviolet;
+        }
+        .container3{
+            height: 150px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        #box13{
+            background-color: aqua;
+        }
+        #box14{
+            background-color: red;
+        }
+        #box15{
+            background-color: blueviolet;
+        }
+
+        .container4{
+            height: 150px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: space-around;
+        }
+        #box17{
+            background-color: aqua;
+        }
+        #box18{
+            background-color: red;
+        }
+        #box19{
+            background-color: blueviolet;
+        }
+        .container5{
+            height: 150px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #box21{
+            background-color: aqua;
+        }
+        #box22{
+            background-color: red;
+        }
+        #box23{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+    </div><hr>
+
+    <div class="container1">
+        <div id="box5" class="box">flex item5</div>
+        <div id="box6" class="box">flex item6</div>
+        <div id="box7" class="box">flex item7</div>
+    </div><hr>
+
+    <div class="container2">
+        <div id="box9" class="box">flex item9</div>
+        <div id="box10" class="box">flex item10</div>
+        <div id="box11" class="box">flex item11</div>
+    </div><hr>
+
+    <div class="container3">
+        <div id="box13" class="box">flex item13</div>
+        <div id="box14" class="box">flex item14</div>
+        <div id="box15" class="box">flex item15</div>
+    </div><hr>
+
+    <div class="container4">
+        <div id="box17" class="box">flex item17</div>
+        <div id="box18" class="box">flex item18</div>
+        <div id="box19" class="box">flex item19</div>
+    </div><hr>
+
+    <div class="container5">
+        <div id="box21" class="box">flex item21</div>
+        <div id="box22" class="box">flex item22</div>
+        <div id="box23" class="box">flex item23</div>
+    </div>
+</body>
+</html>

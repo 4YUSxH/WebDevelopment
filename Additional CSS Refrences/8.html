@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <!-- only appllies to elements with postion set to relative, absolute, fixed or sticky, does not applies on static -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            border: 5px solid grey;
+            border-radius: 5px;
+            margin: 40px;
+        }
+
+        #one{
+            position: absolute;
+            left: 30px;
+            top: 30px;
+        }
+
+        #two{
+            position: fixed;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="one" class="box">box1</div>
+    <div id="two" class="box">box2</div>
+</body>
+</html>

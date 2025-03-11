@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box model</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #a{
+            padding: 5px 10px 15px 20px; /* clockwise: top>irght>bottom>left */
+            /* 
+            or
+            padding-top: 5px;
+            padding-right: 10px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            */
+        }
+        #b{
+            padding: 10px;
+            margin: 10px 20px 30px 40px;
+            /* margin honour karta hai badi value ko */
+            /* padding and border includes in content or element means height and width count with considering padding and border */
+        }
+        #c{
+            padding: 10px;
+            margin: 10px;
+            border: 5px solid red;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="a">Click me</button><hr>
+
+    <button id="b">Click me</button><hr>
+
+    <button id="c">Click me</button>
+</body>
+</html>

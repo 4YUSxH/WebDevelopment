@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align Item</title>
+    <!-- used to align itmes in cross axis -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            margin: 5px;
+        }
+
+        .container{
+            height: 350px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: start;/* default */
+        }
+        #box1{
+            background-color: aqua;
+        }
+        #box2{
+            background-color: red;
+        }
+        #box3{
+            background-color: blueviolet;
+        }
+
+        .container1{
+            height: 350px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box5{
+            background-color: aqua;
+        }
+        #box6{
+            background-color: red;
+        }
+        #box7{
+            background-color: blueviolet;
+        }
+
+        .container2{
+            height: 350px;
+            width: 600px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid black;
+
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+        #box9{
+            background-color: aqua;
+        }
+        #box10{
+            background-color: red;
+        }
+        #box11{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box">flex item1</div>
+        <div id="box2" class="box">flex item2</div>
+        <div id="box3" class="box">flex item3</div>
+    </div><hr>
+
+    <div class="container1">
+        <div id="box5" class="box">flex item5</div>
+        <div id="box6" class="box">flex item6</div>
+        <div id="box7" class="box">flex item7</div>
+    </div><hr>
+
+    <div class="container2">
+        <div id="box9" class="box">flex item9</div>
+        <div id="box10" class="box">flex item10</div>
+        <div id="box11" class="box">flex item11</div>
+    </div>
+</body>
+</html>

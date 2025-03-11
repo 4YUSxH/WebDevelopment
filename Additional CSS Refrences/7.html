@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postioning</title>
+    <!-- 
+        static(default): top, right, bottom, z-index properties would not work
+        relative: element's position is adjusted from it's normal position
+        absolute: consider reference point from page;s corner(upper left)
+        fixed: reference point is viewport , consider as a diff entity, doest not chnage it's position on scrolling
+    -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            border: 5px solid grey;
+            border-radius: 5px;
+            margin: 40px;
+        }
+
+        #static{
+            position: static;
+        }
+        #relative{
+            position: relative;
+            left: 150px;
+        }
+        #fixed{
+            position: fixed;
+            top: 333px;
+            left: 306px;
+        }
+        #absolute{
+            position: absolute;
+            top: 505px;
+            left: 490px;
+        }
+    </style>
+</head>
+<body>
+    <div id="static" class="box">static</div>
+    <div id="relative" class="box">relative</div>
+    <div id="fixed" class="box">fixed</div>
+    <div id="absolute" class="box">absolute</div>
+</body>
+</html>

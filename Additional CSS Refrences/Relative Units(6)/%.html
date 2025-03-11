@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative Units: Percentage</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #first{
+            background-color: aqua;
+            height: 100px;
+            width: 200px;
+        }
+        #second{
+            background-color: royalblue;
+            width: 50%;
+            height: 50%;
+            /*  relative unit: percentage
+                it's sizing is depends on parent's sizing or percentage is relative to parent */
+        }
+    </style>
+</head>
+<body>
+    <div id="first">
+        first div
+        <div id="second">
+            second div
+        </div>
+    </div>
+</body>
+</html>

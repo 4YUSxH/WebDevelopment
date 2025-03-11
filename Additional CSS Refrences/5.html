@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <!-- we can change height and width of block elements easily, but we cant change height and width of inline elements easily for removing this problem we use "inine-block". -->
+    <style>
+        *{
+            margin: 0;
+            height: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 10px;
+            text-align: center;
+            border: 5px solid red;
+            border-radius: 10px;
+
+            display: block;/* div already is block elment hence doest not reflect any changes in output. */
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            margin: 10px;
+            text-align: center;
+            border: 5px solid pink;
+            border-radius: 10px;
+
+            display: inline;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            margin: 10px;
+            text-align: center;
+            border: 5px solid pink;
+            border-radius: 10px;
+
+            display: inline-block;
+        }
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(100, 3, 100);
+            margin: 10px;
+            text-align: center;
+            border: 5px solid rgb(255, 44, 79);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        #one{
+            display: none;
+            /* none is like hidden but it completely dissappear that element */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Box1</div>
+    <div class="box">Box2</div>
+    <div class="box">Box3</div><hr>
+
+    <div class="box1">Box4</div>
+    <div class="box1">Box5</div>
+    <div class="box1">Box6</div><hr>
+
+    <div class="box2">Box7</div>
+    <div class="box2">Box8</div>
+    <div class="box2">Box9</div><hr>
+
+    <div class="box3">Boxa</div>
+    <div id="one" class="box3">Boxb</div>
+    <div class="box3">Boxc</div>
+</body>
+</html>

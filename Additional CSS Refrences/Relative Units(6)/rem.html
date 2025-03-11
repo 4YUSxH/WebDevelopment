@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative Units: rem</title>
+    <style>
+        *{
+            /* root */
+            margin: 0;
+            padding: 0;
+            font-size: 25px;
+        }
+
+        #first{
+            background-color: aqua;
+            height: 300px;
+            width: 300px;
+            font-size: 25px;
+        }
+        #second{
+            background-color: royalblue;
+            height: 50%;
+            width: 70%;
+            font-size: 2rem;
+            /*  relative unit: rem
+                same as em but root become parent */
+        }
+    </style>
+</head>
+<body>
+    body
+    <div id="first">
+        first div
+        <div id="second">
+            second div
+        </div>
+    </div>
+</body>
+</html>
