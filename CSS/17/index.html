@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .container{
+            /* all the flex properties should be applied on container */
+            height: 50vh;
+            border: 2px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row-reverse;
+            /* flex-flow: row(direction) wrap; */
+            /* gap: 30px; it works as margin */
+            /* column-gap: 30px; */
+            /* row-gap: 30px; */
+            /* gap: 20px(row-gap) 30px(column-gap),shortend */
+            flex-wrap: wrap;/* items will wrap acconrding to container size, prevents overflow */
+            /* there is no justfy items property in flexbox */
+        }
+
+        .items{
+            width: 40px;
+            margin: 10px;
+            height: 40px;
+            border: 2px solid black;
+            background-color: cadetblue;
+        }
+        .order-1{
+            order: 1;
+            /* 0 is default ordeer */
+        }
+        .order-2{
+            order: 2;
+        } 
+        .items1{
+            flex-grow: 1;
+            /* default is 0 */
+        }    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items">1</div>
+        <div class="items order-2">2</div>
+        <div class="items">3</div>
+        <div class="items order-1">4</div>
+        <div class="items items1">5</div>
+        <div class="items items2">6</div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+</body>
+</html>
+<!-- justify content: center,left,right,etc align itmes using main axis -->
+ <!-- Main size: Distance between main start and main end
+      Cross size: Dstance between cross start and cross end   -->
+<!-- flex-shrink: 2; It will be shrink hald(2) of it's size and same for 3,4,5,etc -->
+ <!-- align-self: align itself -->
