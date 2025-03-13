@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Fit and Object Position Property</title>
+    <style>
+        .container{
+            background-color: wheat;
+            width: 800px;
+            height: 500px;
+            border: 2px solid red;
+        }
+
+        img{
+            /* object fir peroperty obeys only its element's height and width, not container's height and width */
+            width: 400px;
+            height: 400px;
+            object-fit: cover;/* it will cover its height and width with maninting it's aspect ratio */
+            ;/* object-fit: fill(default) */
+            object-position: left;/* which part should be visible of imaage */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://gratisography.com/wp-content/uploads/2025/01/gratisography-dog-vacation-800x525.jpg" alt="Image">
+    </div>
+</body>
+</html>
