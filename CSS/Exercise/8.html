@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 8</title>
+    <style>
+      .container {
+        background-color: aqua;
+        width: 100vw;
+        height: 80vh;
+      }
+      .ball {
+        position: relative;
+        top: 390px;
+        background-color: violet;
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        animation: AniX 3s cubic-bezier(.86,0,.07,1) 1;
+      }
+
+      @keyframes AniX {
+          0% {
+            transform: translateX(0px) ;
+          }
+          20% {
+            transform: translateX(250px)  translateY(-250px);
+          }
+          40% {
+            transform: translateX(500px) translateY(0px);
+          }
+          60% {
+            transform: translateX(750px) translateY(-250px);
+          }
+          80% {
+            transform: translateX(1000px) translateY(0px);
+          }
+          100% {
+            transform: translateX(1400px) translateY(-250px);
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ball"></div>
+    </div>
+  </body>
+</html>
