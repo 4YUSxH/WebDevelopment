@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .conatiner{
+            background-color: wheat;
+            height: 100vh;
+            width: 100vw;
+        }
+        .nav{
+            height: 15vh;
+            width: 100vw;
+            background-color: aquamarine;
+            position: sticky;
+            top: 0px;
+            z-index: 2;
+        }
+        .left-box{
+            height: 60vh;
+            width: 30vw;
+            background-color: blueviolet;
+            position: absolute;
+            left: 5vw;
+            top: 20vh;
+        }
+        .right-box{
+            height: 60vh;
+            width: 30vw;
+            background-color: rgb(226, 43, 205);
+            position: absolute;
+            right: 5vw;
+            top: 20vh;
+            bottom: 25vh;
+        }
+        .foot{
+            height: 15vh;
+            width: 80vw;
+            background-color: tomato;
+            position: absolute;
+            top: 100vh;
+            left: 10vw;
+            border: 0px;
+            border-radius: 10px;
+        }
+        .text{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 40px;
+            position: absolute;
+            top: 2.5vw;
+            left: 25vw;
+        }
+        .icon{
+            width: 5%;
+            height: 10%;
+            background-color: yellowgreen;
+            border-radius: 100px;
+            position: fixed;
+            left: 95%;
+            top: 85%;
+        }
+        .footer{
+            width: 100vw;
+            height: 40vh;
+            background-color: violet;
+            position: relative;
+            top: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <div class="nav"></div>
+        <div class="left-box"></div>
+        <div class="right-box"></div>
+        <div class="foot">
+            <div class="text">This is website layout</div>
+        </div>
+        <div class="icon"></div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>
