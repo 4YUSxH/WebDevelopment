@@ -10,6 +10,7 @@ else{
 
 //Arithmatic Operators:
 console.log("Arithmatic Operators")
+
 a=2
 console.log(3+2)//Addition
 console.log(3-2)//Substraction
@@ -23,6 +24,7 @@ console.log(--a)//Decreament
 
 //Assignment Operator:
 console.log("Assignment Operators")
+
 console.log(b=4)//b=1
 console.log(b+=1)//b=b+1 and it is increament assignment operator
 console.log(b-=1)//b=b-1 and it is decreament assignment operator
@@ -32,6 +34,7 @@ console.log(b**=1)//b=b**1 and it is modulus assignment operator
 
 //Comprision Operators:
 console.log("Comprision Operators")
+
 console.log(1==1)
 console.log(2!=1)
 console.log("1"==1)//This will only check values
@@ -45,12 +48,14 @@ console.log((33>1)?"P" : "F")
 
 //Logical operators:
 console.log("Logical Operators")
+
 console.log(!true)//Not
 console.log(true&&false)//And
 console.log(false||true)//Or
 
 //if ,elseif, else Ladder:
 console.log("if ,elseif, else Ladder")
+
 year=4
 if(year==1){
     console.log("You can come to freshers party")
