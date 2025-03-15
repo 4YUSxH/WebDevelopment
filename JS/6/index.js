@@ -42,3 +42,5 @@ console.log(c.replace("My", "First occurrence"))
 d = b.concat(c, " YES", " NO")//We can even use + operator also
 console.log(d)
 //Strings are immutable b still "Denji" it will not change
+a[0]='K'// It will not work strings are immutable
+console.log(a)// It Will print Luffy
