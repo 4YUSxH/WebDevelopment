@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM</title>
+    <!-- DOM: DOM stands for Document Object Model -->
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            This is a box
+        </div>
+    </div>
+    <script>
+        console.log("DOM");
+        document.title = "Luffy is good"// The title of this page is Javascript DOM until this line of code is executed, when this line of code is executed then title will become Luffy is good
+        // DOM is used for mapping of entire html to object and as an tree like structure
+        // BOM is browser object model and it is additional objects provided by browser 
+        // It is neccessary top study this DOM and BOM so that we can target elements using JS
+        console.log(document.title);
+        console.log(document.body);
+        document.body.style.background = "green"//We can add style using js and it will add inline css to element
+
+        //console.log("BOM this will only works in broswer ");
+        //window//It is global object provided by browser and many more are exist in broswer
+        //window.document.body//It will provide body of this page and writing of global object is optional we can also write is a document.body it will work same
+    </script>
+</body>
+</html>
