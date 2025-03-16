@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Children, Parent and Sibling Nodes</title>
+    <style>
+      .box {
+        margin: 5px;
+        height: 50px;
+        width: 50px;
+        border: 2px solid red;
+        background: lightcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conatiner">
+      <!-- This is comment node -->
+      <div class="box">Box1</div>
+      <div class="box">Box2</div>
+      <div class="box">Box3</div>
+      <div class="box">Box4</div>
+      <div class="box">Box5</div>
+    </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>28</td>
+            <td>New York</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>34</td>
+            <td>London</td>
+          </tr>
+          <tr>
+            <td>Mark Johnson</td>
+            <td>45</td>
+            <td>Paris</td>
+          </tr>
+        </tbody>
+      </table>
+  </body>
+  <script>
+    console.log("Code is running");
+    console.log(document.body);
+    console.log(document.body.childNodes); //It will provides all the child nodes of this branch
+    console.log(document.body.childNodes[0]); //It will give first child node
+    console.log(document.body.childNodes[1]); //It will give second child node
+    console.log(document.body.childNodes[1].childNodes); //It will provides child nodes of container(childnode[1])
+
+    let cont = document.body.childNodes[1]; //We can assign nodes to a variable
+    console.log(cont);
+    console.log(cont.firstChild); //text node is first node
+    console.log(cont.lastChild); //text node is last node
+    console.log(cont.firstElementChild); //Give first element child hence text node is skipped
+    console.log(cont.lastElementChild); //Give last element child hence text node is skipped
+    cont.lastElementChild.style.color = "red";
+
+    console.log(cont.lastElementChild.parentElement); //Give parent of this child node
+
+    console.log(document.body.firstElementChild);
+    console.log(document.body.firstElementChild.childNodes); //Give all the child nodes
+    console.log(document.body.firstElementChild.children); //Give all the element child nodes
+    console.log(document.body.firstElementChild.children[0]); //Now we know that we can access them using 1,2,3,etc
+    console.log(document.body.firstElementChild.children[1]); //Now we know that we can access them using 1,2,3,etc
+
+    console.log("New");
+    console.log(document.body.firstElementChild.children[3].nextElementSibling); //Now we know that we can access them using 1,2,3,etc, index is started from 0
+    console.log(
+      document.body.firstElementChild.children[3].previousElementSibling
+    ); //Now we know that we can access them using 1,2,3,etc
+
+    console.log("Table");
+    console.log(document.body.children[1].children);//Targeting table
+    console.log(document.body.children[1].rows);//Explore more like thead, tfoot, caption, etc
+  </script>
+</html>
+<!-- spaces are considered as TEXTNODE in DOM -->
+<!-- Div, body, html etc elements are Element node -->
