@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting and Removing Elements using JavaScript</title>
+</head>
+<body>
+    <!-- using data- we can add additional info in element and data- is key and conceptby,createdby,etc is pair and key is ignored and only value is displayed by js -->
+    <div style="color: red" class="container container2 container3" data-createdby="Luffy" data-conceptby="Denji">
+        <div class="box">Hi i am a box</div>
+    </div>
+</body>
+<script>
+    console.log(document.querySelector(".box"));
+    console.log(document.querySelector(".box").innerHTML);//Provide inner html and its on;y provides its inner html not includes itself
+    console.log(document.querySelector(".box").outerHTML);//Provide outer html and this includes itsele and its outer html
+    console.log(document.querySelector(".container").innerHTML);
+    console.log(document.querySelector(".container").outerHTML);
+    
+    console.log(document.querySelector(".box").innerText);//Provide inner text
+    console.log(document.querySelector(".box").innerText = "My name is Luffy");//We can change outer and inner html
+    console.log(document.querySelector(".container").innerText);
+
+    console.log(document.querySelector(".container").tagName);//Provide tag element(div, span, body, etc) and it is only applicable for tags pretty self explaintory
+    console.log(document.querySelector(".container").nodeName);//Provide node name(element node, comment node, text node, etc)
+    
+    console.log(document.querySelector(".container").textContent);//Provide access to the text inside the element(only text, minus all tags)
+    
+    console.log(document.querySelector(".container").hidden);//Show this element is hidden(true) or not(false)
+    // console.log(document.querySelector(".container").hidden = true);//Changing hidden=false to hidden=true hence this will hide the container, by making it true it will add hidden attribute to container's div
+    
+    console.log(document.querySelector(".container").hasAttribute("style"));//Used for checking attribute is present or not
+    console.log(document.querySelector(".container").setAttribute("style", "color: green"));//We can change the value of attribute
+    console.log(document.querySelector(".container").attributes);//Provides all the attributes
+    console.log(document.querySelector(".container").removeAttribute("style"));//We can remove the attribute
+    
+    console.log(document.designMode);//We can activate(true) and decativate(false) the designmode(visual editor) of this webpage 
+    
+    console.log(document.querySelector(".container").dataset);//We can remove the attribute
+
+    let add = document.createElement("div")
+    add.innerHTML = "I have just created this div using <b>DOM</b>"
+    add.setAttribute("class", "newdiv")
+    document.querySelector(".container").append(add)//Append add the element at last and some are like this: .prepend, before, after, replacewith, we can dynamically(on runtime) add html to webpage using it
+
+    // let cont = document.querySelector(".container")
+    // cont.insertAdjacentHTML("afterbegin", <i>This HTML is inserted using DOM manipluaiton</i>)//beforeend: add html before element, afterend, afterbegin:add html after element, beforebegin
+    // * We can insert AdjacentHTML, AdjacentTEXT and AdjacentELEMENT
+
+    // console.log(document.querySelector(".container").remove);//It will remove this
+
+    console.log(document.querySelector(".container").className);//Provide all the name of classes of .container
+    console.log(document.querySelector(".container").classList);//Provide list of classes of .container
+    console.log(document.querySelector(".container").classList.add("JJK"));//Adding a new class into list
+    console.log(document.querySelector(".container").classList);//Provide list of classes of .container
+    console.log(document.querySelector(".container").classList.remove("JJK"));//Adding a new class into list
+    console.log(document.querySelector(".container").classList);//Provide list of classes of .container
+    
+    console.log(document.querySelector(".container").classList.toggle("red"))//It will toggle(on, off) the red class
+    console.log(document.querySelector(".container").classList.toggle("red"))
+    console.log(document.querySelector(".container").classList.toggle("red"))
+    console.log(document.querySelector(".container").classList.toggle("red"))
+</script>
+</html>
