@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Async JS</title>
+    <title>Callbacks and Promises</title>
 </head>
 <body>
     
 </body>
+<script>
+    // sync kya hota hai
+    // Sync: sync matlab ek ke baad dusra hoga, jab tak ek comman complete naa ho, dusra shuru nahi hoga, It will work in order
+    // Ex Task1 - 5s this will eexcute first
+    //    Task2 - 2s after completion of first it will exucute
+    //    Task3 - 15s after completion of second it will exucute
+    //    Task4 - 1s after completion of third it will exucute
+    // Total time - 23s
+
+    // async kya hota hai
+    // Async: async matlab saare kaam ek sath kardo, jiska answer paghele aa jaae uska asnwer de dena, It is orderlesss
+    //    Task1 - 5s In this all task start executing at same time 
+    //    Task2 - 2s 
+    //    Task3 - 15s 
+    //    Task4 - 1s 
+    // Total time - 15s
+
+    // kese pata chalta hai ki hum sync code likh rahe ya async
+    // Sync code:
+    // console.log("heyy1");
+    // console.log("hey2");
+    // console.log("hey3");
+    // console.log("hey4");
+
+    // Asnc code: 
+    // jis line mai Setinterval, Settimeout, Promises, Fetch, Acios, XMLHttRequest keywords dikh jaaye wo async code hota hai
+
+    // Async js hai kya?
+    // kai baar aapka final code depended hota hai kisi aur ke server par, is case mein hume nahi pata hota ki answer uske server se kab laut kar aayeega, to hum sync code write nahi kar sakte, isse nipttane ke liye hum lof async code likh dete hai taaki blocking naa ho and jab bhi answer aaye to humare asnwer ke respeect mein chalne wala code chal jaaye
+</script>
 </html>
