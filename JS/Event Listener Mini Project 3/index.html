@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica";
+        box-sizing: border-box;
+    }
+
+    html, body{
+        width: 100%;
+        height: 100%;
+    }
+
+    #main{
+        width : 100%;
+        height: 100%;
+        background-color: #222;
+    }
+
+    h1{
+        color: #555;
+        font-size: 14rem;
+        font-weight: 300;
+        user-select: none;
+    }
+
+    input{
+        display: block;
+    }
+
+    .card{
+        max-width: 300px;
+        color: white;
+        margin-top: 40px;
+        border-radius: 10px;
+        display: inline-block;
+        padding: 20px;
+        border: 1px solid #555;
+    }
+
+    .card h5{
+        margin-top: 3px;
+    }
+
+    .card p{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .profile{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 7px;
+        overflow: hidden;
+    }
+
+    .profile img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+<body>
+    <div id="main">
+        <form action="">
+            <input type="text" placeholder="ProfilePic">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Occupation">
+            <input type="text" placeholder="About You">
+            <input type="submit">
+        </form>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
