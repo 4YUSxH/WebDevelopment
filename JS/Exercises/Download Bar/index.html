@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glassmorphism Download Bar</title>
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: #0f0f0f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Glassmorphic Container */
+    .download-container {
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      width: 400px;
+      padding: 30px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .download-title {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      position: relative;
+      height: 20px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00ffe7, #007cf0);
+      border-radius: 10px 0 0 10px;
+    }
+
+    .progress-text {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="download-container">
+    <div class="download-title">Downloading File</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text" id="progressText">0%</div>
+  </div>
+
+</body>
+<script src="script.js"></script>
+</html>
