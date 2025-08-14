@@ -79,7 +79,7 @@ showUsers(users);
 let inp = document.querySelector(".inp");
 inp.addEventListener("input", function () {
         let newUsers = users.filter((user) => {
-        return user.name.starts With(inp.value);
+        return user.name.startsWith(inp.value);
   });
 
     document.querySelector(".cards").innerHTML = "";
