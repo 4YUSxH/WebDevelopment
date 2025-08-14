@@ -2,4 +2,5 @@
 
 // Cookies mai jo bhi data store karoge wo data page reload par automatically server par jaayega
 
+// we can automatically expire a cookie after sometime(gpt it)
 document.cookie = "age = 20";
