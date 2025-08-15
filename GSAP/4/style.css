@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Outfit";
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+}
+body{
+    overflow-x: hidden;
+    background-color: #111;
+}
+
+#string{
+    height: 200px;
+    width: 100%;
+}
+
+svg {
+      width: 100vw;
+      height: 200px;
+      display: block;
+    }
