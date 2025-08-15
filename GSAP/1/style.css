@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Helvetica";
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+}
+
+.box1{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+}
+
+.box2{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(15, 241, 147);
+}
+
+.box3{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(124, 241, 15);
+}
+
+.box4{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(241, 117, 15);
+}
+
+.box5{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(15, 38, 241);
+}
+
+.box6{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(241, 15, 120);
+}
