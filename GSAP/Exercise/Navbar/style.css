@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Outfit";
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+h2{
+    font-family: "Kaushan Script";
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    font-weight: 200;
+    white-space: nowrap;
+}
+
+#nav{
+    /* background-color: aqua; */
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    padding: 30px 50px;
+}
+
+#part2{
+    display: flex;
+    gap: 50px;
+}
