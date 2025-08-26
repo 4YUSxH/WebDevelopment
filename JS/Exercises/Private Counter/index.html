@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    function countForMe() {
+      let c = 0;
+      return function () {
+        c++;
+        console.log(c);
+      };
+    }
+
+    let fnc = countForMe();
+    fnc();
+    fnc();
+    fnc();
+
+    let fnc1 = countForMe();
+    fnc1();
+    fnc1();
+    fnc1();
+  </script>
+</html>
