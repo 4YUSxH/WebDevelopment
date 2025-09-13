@@ -1,6 +1,6 @@
 // hume seekhna hai factories i.e class banana, matlab ki aap ek baar blueprint bana do ki  har object kaise dikhega and hum log naye naye objects i.e instances with different values bana payenge, yahi hai upar upar se poora kaam hai OOPS mai  
 
-// Constructor function - function is blueprint and creating blank object using new keyword is instances
+// Constructor function - function is blueprint and creating blank object using new keyword is instances and it is a ES5 feature
 function CreatePencil(company, price, color) {
     this.company = company;
     this.price = price;
