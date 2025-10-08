@@ -1,0 +1,20 @@
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+input{
+    width: 150%;
+}
+
+.my-button{
+    min-width: 80px;
+    position: absolute;
+    left: 70%;
+}
+
+.my-row{
+    margin: 10px 5px;
+}
