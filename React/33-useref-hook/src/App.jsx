@@ -26,7 +26,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button ref={btnRef1} onClick={() => setCount((count) => count + 1)}>
-          {/* Above using btnRef to refer above element, It will button color to blue*/}
+          {/* Above using btnRef to refer above element, It will button color to blue aka DOM manipluation without using actual(real) DOM*/}
           count is {count}
         </button>
         <p>
