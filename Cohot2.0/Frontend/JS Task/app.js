@@ -89,7 +89,7 @@ console.log(u, i); // 5 10 output aayega cause i=10 kiya hai par u and i ki valu
 
 let obj1 = { name: "Harsh" };
 let obj2 = obj1; // Yahaan object copy nahi hua, balki reference (address) copy hua
-obj2.name = "Sheryians"; // obj2 ko change karne par obj1 mai bhi change aayega
+obj1.name = "Sheryians"; // obj1 ko change karne par obj2 mai bhi change aayega
 console.log(obj1.name, obj1.name);
 // Chatgpt this: Draw memory boxes on paper to visualize difference.
 
