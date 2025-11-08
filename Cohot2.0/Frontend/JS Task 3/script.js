@@ -63,13 +63,13 @@ for (let i = 1; i < 11; i++) {
 }
 
 console.log("Count how many numbers between 1 and 15 are greater than 8");
+let countter = 0;
 for (let j = 1; j < 16; j++) {
   if (j > 8) {
-    console.log(`${j} is greater than 8`);
-  } else {
-    console.log(`${j} is less than 8`);
-  }
+    countter++;
+  } 
 }
+console.log(`The total numbers greater than 8 is ${countter}`);
 
 console.log(
   "Ask user for password and print access status Hardcoded correct password. Compare with user input."
@@ -104,17 +104,19 @@ console.log(
 
 console.log("Ask user for words until they type “stop”. Count how many times they typed “yes” Loop until Stop is typed. Count Yes.");
 // let n = 1;
+// let countee = 0; 
 // while(n<=n){
 //     let o = prompt("Enter word");
 //     if(o==="stop"){
 //         console.log("Stop");
 //         break;
 //     }
-//     else{
-//         console.log(`${n} : Yes`);
+//     else if(o==="yes") {
+//       countee++;
 //     }
-//     n++
+//     n++;
 // }
+// console.log(`${countee} : Yes`);
 
 console.log("Print numbers divisible by 7 from 1 to 50");
 for (let p = 7; p < 51; p += 7) {
@@ -155,8 +157,11 @@ console.log("Keep asking number until user enters an even number");
 // }
 
 console.log("Print numbers between two user inputs");
-// input1 = prompt("Enter input 1");
-// input2 = prompt("Enter input 2");
+// input1 = +prompt("Enter input 1");
+// input2 = +prompt("Enter input 2");
+// if(input2 < input1){
+//   console.log("Enter numbers correctly input2 cannot be bigger than input1");
+// }
 // for(input1++; input1<input2; input1++){
 //     console.log(input1);
 // }
@@ -189,8 +194,69 @@ console.log("Ask user 5 numbers. Count how many are positive");
 //     }
 // }
 
+console.log("Handelling prompt");
+// let u = prompt("Enter number");
+// // If someone cancel prompt
+// if(u === null){
+//   console.warn("You cancelled it")
+// }
+// // Empty propmt
+// else if(u.trim() === ""){
+//   console.warn("Please enter something")
+// }
+// // Entering string but i was asking for a number
+// else if(!(+u === +u)){
+//   console.warn("Enter numbers only");
+// }
+// else{
+//   console.log(+u);
+// }
+
 // 19. ATM Simulator – Allow 3 withdrawals
 // Start with ₹1000 balance. Ask withdrawal amount 3 times.
 // If enough balance → deduct
 // Else → print “Insufficient balance”
 console.log("ATM Simulator – Allow 3 withdrawals");
+let balance = 1000;
+let times = 0;
+
+while(times !== 3){
+  let ask = +prompt("Enter amount");
+  times++;
+  if(ask >= 0 && ask <= balance){
+    balance -= ask;
+    console.log("Amount deducted", ask);
+    console.log(`Remaining balance : ${balance}`);
+  } 
+  else{
+    console.log(`Not enough balance and Remaining balance: ${balance}`);
+    break;
+  }
+}
+
+
+
+
+
+
+console.log("Allow only 3 attempts to enter correct password If user gets it right early, stop. If not → “Account locked(Optimal way)");
+// let correctpass = "solo";
+// let userpass = prompt("Enter password");
+// let countt = 1;
+// if(userpass === correctpass){
+//   console.log("Account unlocked");
+// }
+// else{
+//   while(userpass !== correctpass){
+//     userpass = prompt("Enter pass");
+//     countt++;
+//     if(userpass === correctpass){
+//       console.log("Account unlocked");
+//       break;
+//     }
+//     else if(countt === 3){
+//       console.log("Account locked");
+//       break;
+//     }
+//   }
+// }
