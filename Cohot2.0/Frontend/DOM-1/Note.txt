@@ -1,0 +1,13 @@
+4 Pillars of DOM
+
+1. Selection 
+    - querySelector
+    - getElementById
+    - querySelectorAll
+2. Changing HTML
+    - textContent
+    - innerHTML
+3. Changing CSS
+    - .style.property
+4. EventListener
+    - .addEventListener
