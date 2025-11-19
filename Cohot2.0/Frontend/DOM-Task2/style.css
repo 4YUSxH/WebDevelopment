@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #555;
+  color: #fff;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 25px;
+  margin: 50px;
+  background-image: url(https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3JpY2tldHxlbnwwfHwwfHx8MA%3D%3D);
+  background-size: cover;
+  text-align: center;
+  color : tomato;
+  border-radius: 15px;
+  min-height: 350px;
+}
+
+.card h1 {
+  position: relative;
+  z-index: 1;
+  color: #fff;  /* white pops best on the overlay */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7); /* crisp readability */
+}
+
+button {
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+
+  background-color: #b22222;   /* deeper red = stronger contrast */
+  color: #fff;                 /* white text so it actually pops */
+
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5); /* readability boost */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4); /* stands out against background */
+}
