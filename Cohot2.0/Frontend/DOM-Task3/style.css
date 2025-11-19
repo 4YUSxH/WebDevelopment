@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  overflow: hidden;
+}
+
+div {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+h1{
+  position: absolute;
+  white-space: nowrap;
+}
+
+button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  background: #2a2a2a;            /* cozy card color */
+  color: #f1f1f1;                 /* soft readable text */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  border: 1px solid #3a3a3a;      /* subtle stroke */
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.4),
+    inset 0 0 4px rgba(255, 204, 102, 0.15); /* warm inner glow */
+  
+  transition: all 0.25s ease;
+
+    position: relative;
+    z-index: 99;
+}
+
+button:hover {
+  background: #333;               /* slight lift in brightness */
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.5),
+    0 0 10px rgba(255, 204, 102, 0.25); /* soft warm glow */
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.45),
+    inset 0 0 6px rgba(255, 204, 102, 0.2);
+}
