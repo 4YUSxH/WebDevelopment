@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    width: 360px; /* Increased card width */
+    padding: 35px; /* More padding */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.profile-pic {
+    width: 160px;   /* Larger profile picture */
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #e4e6eb;
+}
+
+.name {
+    margin: 15px 0 10px;
+    font-size: 30px; /* Larger text */
+    font-weight: 700;
+}
+
+.occupation {
+    color: #555;
+    font-size: 20px; /* Larger occupation text */
+    margin: 8px 0;
+}
+
+.location {
+    color: #777;
+    font-size: 18px; /* Larger location text */
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: #4a6cf7;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 73%;
+}
+
+button:hover {
+    background: #3a57d0;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
