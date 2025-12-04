@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virtual Piano — Full Width Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1 class="title">Virtual piano</h1>
+    </header>
+
+    <section class="keyboard-wrap" aria-label="Piano keyboard">
+      <div class="keyboard" id="keyboard">
+        <!-- 3 octaves: C3..B5 (21 white keys). Black keys are children of whites where applicable. -->
+        <!-- Octave 3 -->
+        <div class="white-key" data-note="C3" data-has-sharp>
+          <div class="black-key" data-note="C#3" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="D3" data-has-sharp>
+          <div class="black-key" data-note="D#3" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="E3"></div>
+        <div class="white-key" data-note="F3" data-has-sharp>
+          <div class="black-key" data-note="F#3" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="G3" data-has-sharp>
+          <div class="black-key" data-note="G#3" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="A3" data-has-sharp>
+          <div class="black-key" data-note="A#3" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="B3"></div>
+
+        <!-- Octave 4 -->
+        <div class="white-key" data-note="C4" data-has-sharp>
+          <div class="black-key" data-note="C#4" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="D4" data-has-sharp>
+          <div class="black-key" data-note="D#4" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="E4"></div>
+        <div class="white-key" data-note="F4" data-has-sharp>
+          <div class="black-key" data-note="F#4" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="G4" data-has-sharp>
+          <div class="black-key" data-note="G#4" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="A4" data-has-sharp>
+          <div class="black-key" data-note="A#4" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="B4"></div>
+
+        <!-- Octave 5 -->
+        <div class="white-key" data-note="C5" data-has-sharp>
+          <div class="black-key" data-note="C#5" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="D5" data-has-sharp>
+          <div class="black-key" data-note="D#5" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="E5"></div>
+        <div class="white-key" data-note="F5" data-has-sharp>
+          <div class="black-key" data-note="F#5" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="G5" data-has-sharp>
+          <div class="black-key" data-note="G#5" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="A5" data-has-sharp>
+          <div class="black-key" data-note="A#5" aria-hidden="true"></div>
+        </div>
+        <div class="white-key" data-note="B5"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
