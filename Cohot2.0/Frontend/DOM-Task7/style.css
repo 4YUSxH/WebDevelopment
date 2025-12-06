@@ -1,106 +1,95 @@
-/* ===== Full-width piano appearance ===== */
-:root{
-  --white-height: 260px;    /* visual height; will scale on small screens */
+:root {
+  --white-height: 260px;
   --black-height: 160px;
   --black-width: 38px;
-  --white-border-dark: rgba(0,0,0,0.08);
-  --bg: #f6f7f9;
-  --card: #ffffff;
-  --shadow: 0 12px 30px rgba(16,24,40,0.06);
+  --bg: #f3f4f6;
+  --card: #fff;
+  --shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 
-/* Page reset */
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg)}
-.app{max-width:1200px;margin:28px auto;padding:18px}
-.header{margin-bottom:6px}
-.title{font-weight:600;margin:4px 0 18px;font-size:28px;color:#111}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); font-family: Inter, sans-serif; }
 
-/* Keyboard wrapper: no horizontal scrollbar, keyboard stretches to fill */
-.keyboard-wrap{
-  width:100%;
-  overflow:hidden;        /* hide scrollbar, keyboard will scale to fit */
-  padding:8px;
+.app { max-width: 1200px; margin: 30px auto; padding: 20px; }
+
+.title { margin-bottom: 20px; font-size: 28px; font-weight: 600; }
+
+.keyboard-wrap { overflow: hidden; }
+
+.keyboard {
+  display: flex;
+  width: 100%;
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
-/* Keyboard row: white keys stretch evenly to fill available width */
-.keyboard{
-  display:flex;
-  gap:0;
-  align-items:flex-end;
-  width:100%;
-  background:var(--card);
-  border-radius:10px;
-  box-shadow:var(--shadow);
-  padding: 10px 10px 18px;
-}
-
-/* White keys: flex 1 so they evenly distribute and fill width (no scrollbar) */
-.white-key{
-  flex: 1 1 0;
+/* ==== WHITE KEYS ==== */
+.white-key {
+  flex: 1;
   height: var(--white-height);
-  background: linear-gradient(180deg,#fff,#f7f7f7);
-  border: 1px solid var(--white-border-dark);
-  border-bottom: 8px solid rgba(0,0,0,0.06);
+  background: linear-gradient(#ffffff, #f2f2f2);
+  border-left: 2px solid #cfcfcf;
+  border-right: 2px solid #cfcfcf;
+  border-bottom: 8px solid #c8c8c8;
+  border-top: 1px solid #e6e6e6;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.18),
+    inset 1px 0 0 rgba(0,0,0,0.25);
+
   border-radius: 0 0 10px 10px;
   position: relative;
-  margin: 0;               /* no gaps between whites */
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  user-select: none;
-  transition: transform .06s ease, box-shadow .06s ease;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.02) inset;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
 }
 
-/* Pressed look for white keys */
-.white-key.active {
-  transform: translateY(6px);
-  box-shadow: none;
+.white-key .label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
 }
 
-/* Hidden labels (you asked to remove marks) */
-/* If you want labels later, add a span inside white-key and remove this rule */
-.white-key span { display: none }
-
-/* Black keys are children inside white keys, positioned relative so they stay correct
-   Using left: calc(100% - half black width) makes them visually positioned between whites */
-.white-key .black-key{
+/* ==== BLACK KEYS ==== */
+.black-key {
   position: absolute;
   left: calc(100% - (var(--black-width) / 2));
   top: -8px;
+
   width: var(--black-width);
   height: var(--black-height);
-  background: linear-gradient(180deg,#101010,#0b0b0b);
-  border-radius: 0 0 6px 6px;
+
+  background: linear-gradient(#111, #000);
+  border: 1px solid #333;
   box-shadow: 0 8px 18px rgba(0,0,0,0.5);
-  z-index: 20;
-  pointer-events: auto;
-  transition: transform .06s ease;
+
+  border-radius: 0 0 8px 8px;
   cursor: pointer;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 6px;
 }
 
-/* Slight press effect for blacks (JS toggles style) */
-.white-key .black-key.active {
-  transform: translateY(6px);
+.black-key .blabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
 }
 
-/* Responsive scaling for small screens so keyboard still looks full */
+/* RESPONSIVE */
 @media (max-width: 700px) {
-  :root{
+  :root {
     --white-height: 180px;
     --black-height: 110px;
     --black-width: 30px;
   }
-  .title { font-size: 20px; }
+  .title { font-size: 22px; }
 }
-
-/* Focus outline for keyboard navigation */
-.white-key:focus, .white-key .black-key:focus {
-  outline: 3px solid rgba(59,130,246,0.25);
-  outline-offset: 2px;
-}
-
-/* Prevent accidental selection/dragging */
-.white-key, .white-key .black-key { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
