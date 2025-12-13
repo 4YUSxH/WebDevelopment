@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b10;
+  color: #eaeaf0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* animated angle */
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderAnimate {
+  0% {
+    --rotate: 0deg;
+  }
+  50% {
+    --rotate: 180deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+.card {
+  max-width: 300px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+
+  padding: 12px;
+  border-radius: 16px;
+  border: 3px solid #0b0b10;
+
+  background: linear-gradient(#0b0b10, #0b0b10) padding-box,
+    conic-gradient(from var(--rotate), #0b0b10, #7c4dff, #ff4ecd, #0b0b10)
+      border-box;
+
+  box-shadow: 0 0 0 rgba(255, 78, 205, 0), 0 0 0 rgba(124, 77, 255, 0);
+
+  animation: borderAnimate 4s linear infinite;
+  animation-play-state: paused;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.card:hover {
+  animation-play-state: running;
+  color: #ff4ecd;
+
+  box-shadow: 0 0 25px rgba(255, 78, 205, 0.6), 0 0 60px rgba(124, 77, 255, 0.4);
+  transform: translateY(-4px);
+  border: 3px solid transparent;
+
+}
+
+h1,
+p {
+  transition: color 0.25s ease;
+}
+
+.card:hover h1 {
+  color: #f756c9; /* softer neon pink */
+}
+
+.card:hover p {
+  color: #9068f7; /* light violet for readability */
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+h1 {
+  font-family: Cronde;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  color: #cfcfe6;
+  line-height: 1.4;
+}
