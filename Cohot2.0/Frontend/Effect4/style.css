@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  anchor-name: --anyAnchor;
+}
+
+a:hover {
+  anchor-name: --anyAnchor;
+}
+
+.conatiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 500px;
+}
+
+.conatiner a {
+  text-decoration: none;
+  color: white;
+  font-family: Roboto;
+  font-weight: 450;
+  font-size: 1.1rem;
+}
+
+.anchor {
+  background-color: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: anchor(top);
+  left: anchor(left);
+  right: anchor(right);
+  bottom: anchor(bottom);
+  pointer-events: none;
+  position-anchor: --anyAnchor;
+  transition: all 0.3s linear;
+  mix-blend-mode: difference;
+}
+/* This code is nearly correet but this effect wont work in firefox browser */
