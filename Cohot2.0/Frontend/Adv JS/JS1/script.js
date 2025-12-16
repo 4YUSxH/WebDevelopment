@@ -154,7 +154,7 @@ Human.prototype.saansLo = function () {
 Human.prototype.khaanaKhao = function () {
   console.log("Eating");
 };
-// Prototype -> Shared memory among all instances, isse memory utilization acche se hoga
+// Prototype -> Shared memory among all instances, isse memory utilization acche se hoga & constructor ke bahar and class ke andar jo add karoge wo automatically prototype mai chala jayega.
 
 let h3 = new Human();
 let h4 = new Human();

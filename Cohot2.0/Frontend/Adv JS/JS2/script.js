@@ -1,0 +1,2 @@
+// Chota code kaisa bhi likh lo problem nahi aayegi, par industry ka bada code base aese(Spaghetti Code) nahi likh sakte, Industry mai maintainable, modular, scalable, easy to read & manage code likhte hai aur aese code ko likhne ke liye ke practice follow karte hai jisse OOPs kahte hai.
+// OOps : Is a way to write good code.  
