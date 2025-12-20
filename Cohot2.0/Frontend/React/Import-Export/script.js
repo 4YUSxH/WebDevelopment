@@ -6,8 +6,12 @@ import {gf} from "./app.js"
 // import {gfss} from "./app.js" // Cannot write this it will throw an error
 // import {age, gf} from "./app.js" // We can also write as it is shorter for names import 
 
+import exportedfunc from "./func.js"; //Function can also import
+
 console.log(username);
 console.log(userKaNaam);
 
 console.log(age);
 console.log(gf);
+
+console.log(exportedfunc());
