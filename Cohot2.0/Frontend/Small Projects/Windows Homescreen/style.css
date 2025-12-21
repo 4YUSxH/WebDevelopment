@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+  background: url("./windows-11-pink-qhnhvjht7ytb41uz.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.taskbar {
+  width: 100vw;
+  height: 50px;
+  background-color: hsla(0, 0%, 0%, 0.35);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding-inline: 14px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#firstimg {
+  width: 37px;
+}
+#secimg {
+  width: 30px;
+}
+#thirdimg {
+  width: 29px;
+}
+#fourthimg {
+  width: 28px;
+}
+
+i {
+  font-size: 25px;
+  color: white;
+}
+i:hover {
+  color: #0075FF;
+}
+
+#search {
+  width: 287px;
+  height: 36px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+#searchicon {
+  color: black;
+  opacity: 0.55;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.winclick {
+  width: 255px;
+  height: 330px;
+  background-color: whitesmoke;
+  color: black;
+  padding-inline: 20px;
+  font-family: "Segoe UI";
+  font-size: 13px;
+  font-weight: 500;
+
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#insidewinlick {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 9px;
+}
+
+.uplift {
+  transition: transform 0.15s ease;
+}
+
+.uplift:hover {
+  transform: translateY(-4px);
+}
