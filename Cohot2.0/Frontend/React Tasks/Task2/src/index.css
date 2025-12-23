@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  font-family: TASA Orbiter;
+  color: #101b2a;
+  overflow-x: hidden;
+}
+
+.navcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100vw;
+  padding-inline: 100px;
+  /* background-color: wheat; */
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.booknow {
+  font-size: 1rem;
+  border-radius: 50px;
+  background-color: black;
+  padding: 8px 12px;
+  color: #ffffff;
+}
+
+.herocontainer {
+  /* background-color: pink; */
+  width: 100vw;
+  height: 45vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.herocontainer img {
+  width: 86.8vw;
+  height: 40vw;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.herocentercontainer {
+  width: 70vw;
+  height: 40vw;
+  /* background-color: aqua; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.herocentercontainer h1 {
+  text-align: center;
+  margin-top: 6%;
+  font-size: 45px;
+  font-weight: 500;
+  width: 50vw;
+  color: #ffffff;
+}
+
+.herocentercontainer p {
+  text-align: center;
+  font-size: 23px;
+  width: 45vw;
+  color: #ffffff;
+}
+
+.herocentercontainer button {
+  font-size: 17px;
+  color: #ffffff;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: rgb(29, 28, 28);
+  padding: 8px 15px;
+  font-weight: 100;
+}
+
+.herobottom {
+  width: 84vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10%;
+}
+
+.left p {
+  font-size: 13px;
+  width: 13vw;
+  text-align: left;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.leftbox {
+  width: 90px;
+  height: 30px;
+  background-color: #ffffff9c;
+  border-radius: 50px;
+}
+
+.right a {
+  font-size: 14px;
+  width: 13vw;
+  text-align: left;
+  padding: 5px;
+  color: #ffffff;
+}
