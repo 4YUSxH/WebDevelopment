@@ -5,7 +5,7 @@ function App() {
     <>
       <h1 className="text-5xl font-bold ">I am stlyed with Tailwind Css :)</h1>
       <div className="h-100 w-100 bg-amber-700"></div>
-      <div className="h-[150px] w-[100vw] bg-pink-700">
+      <div className="h-37 w-screeb bg-[#a51e1e]">
         For giving custom vlues use []
       </div>
     </>
