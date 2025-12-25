@@ -1,0 +1,29 @@
+body{
+    background-color: #111;
+    color: white;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-inline: 50px;
+}
+
+button{
+    background-color: #fdb7b7;
+    padding: 10px 15px;
+    font-size: larger;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+button:active{
+    scale: 1.05;
+}
+
+.btn{
+    background-color: #91a2fd;
+    padding: 10px 15px;
+    font-size: larger;
+    border-radius: 10px;
+    width: 90px;
+}
+.btn:active{
+    scale: 1.05;
+}
