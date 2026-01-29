@@ -1,0 +1,1 @@
+Dont push node_modules and .env files on github use .gitignore for preventing those files form pushing
