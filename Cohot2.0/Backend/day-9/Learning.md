@@ -30,3 +30,11 @@ Another ex: Bank site(bank.com) and Hacker site(xyz.com) you cannot request on b
 // In app.js
 2. const cors = require("cors") 
 3. app.use(cors()) // It is a middleware
+
+-----------------------------------------------------------------------------
+
+Re-rendering React UI -> Whenever any state(setstate()) is changes that component's whole UI gets re-render hence the whole code re-run and APIs being called again and again, for stopping Api calling on re-rendering we use useEffect with empty dependency array, Calling Api once elimate the extra burden on site whenever re-render happen
+
+-----------------------------------------------------------------------------
+
+axios.post("http://localhost:3000/api/notes", {This position for request.body}).then((res) => {console.log(res)})
