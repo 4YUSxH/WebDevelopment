@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background-color: #0f0f0f;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  color: white;
+}
+
+/* CREATE FORM */
+.note-create-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 3rem;
+}
+
+.note-create-form input {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.4rem;
+  outline: none;
+}
+
+.note-create-form input:focus {
+  border-color: #555;
+}
+
+.note-create-form button {
+  background: #2a2a2a;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.note-create-form button:hover {
+  background: #3a3a3a;
+}
+
+/* NOTES GRID */
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 3rem;
+}
+
+/* NOTE CARD */
+.note {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  width: 220px;
+}
+
+.note h1 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.note p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* BUTTON CONTAINER */
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+/* BUTTONS */
+button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+button:hover {
+  border-color: #666;
+  color: white;
+}
+
+.note-update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.note-update-form input {
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  outline: none;
+  font-size: 0.85rem;
+}
+
+.note-update-form input:focus {
+  border-color: #666;
+}
+
+.note-update-form button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.note-update-form button:hover {
+  border-color: #666;
+  color: white;
+}
