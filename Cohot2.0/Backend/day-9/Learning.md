@@ -33,8 +33,30 @@ Another ex: Bank site(bank.com) and Hacker site(xyz.com) you cannot request on b
 
 -----------------------------------------------------------------------------
 
-Re-rendering React UI -> Whenever any state(setstate()) is changes that component's whole UI gets re-render hence the whole code re-run and APIs being called again and again, for stopping Api calling on re-rendering we use useEffect with empty dependency array, Calling Api once elimate the extra burden on site whenever re-render happen
+=> Re-rendering React UI -> Whenever any state(setstate()) is changes that component's whole UI gets re-render hence the whole code re-run and APIs being called again and again, for stopping Api calling on re-rendering we use useEffect with empty dependency array, Calling Api once elimate the extra burden on site whenever re-render happen
 
 -----------------------------------------------------------------------------
 
-axios.post("http://localhost:3000/api/notes", {This position for request.body}).then((res) => {console.log(res)})
+=> axios.post("http://localhost:3000/api/notes", {This position for request.body}).then((res) => {console.log(res)})
+
+-----------------------------------------------------------------------------
+
+=> Deployment -> We host our website on backend server url with wildcard route ex: http://localhost:3000/
+1. npm run build: Run this command in frontend terminal this convert whole react project into html, css and js files in 'dist' folder
+2. In backend folder create 'public' folder and move that all three files with exact folder strucutre as it is in dist  from dist to public
+3. Create wildcard route in app.js app.use('*name', (req, res) => {res.send("This is wildcard)}) it is a middleware that will handel apis that we have not created ex: http://localhost:3000/dfsjhl 
+4. In response send index.html file, res.sendfile("file_absolute_path"), use "path" package for hiding absolute path,
+   res.sendFile(path.join(__dirname, "..", "/public/index.html")) // __dirname: Path of current working directory
+5.
+
+
+
+
+// In index.html
+<script type="module" crossorigin src="/assets/index-BffdtEXD.js"></script> // Index req Js
+<link rel="stylesheet" crossorigin href="/assets/index-DPWrEUms.css"> // Index req Css
+Ye two line request karti hai backend par ki ye files mujhe response mai send kardo inki request kuch aesi dikhti hai 1. http://localhost:3000/assets/index-BffdtEXD.js, 2. http://localhost:3000/assets/index-DPWrEUms.css, aur humne humare server ko aese wildcard route ke lite program kiya hai ki index.html response mai bhej dena islie inn dono ki request mai bhi response mai index.html file chali jayegi jisse css and js file nahi jayegi aur page mai sird html hoga, for sending correct file when index request we use a middleware app.use(express.static("./public"))
+
+app.use(express.static("./public")) // Jo bhi public folder ki files(html, css, js) hai unko publically avialable karwa deti hai hence inn files ko koi bhi access kar sakta hai, ab jab index se css js file ki req 1. http://localhost:3000/assets/index-BffdtEXD aati hai to http://localhost:3000 yaha tak to server ka url hai /assets/index-BffdtEXD yaha se middleware check karega assests ke andar index-BffdtEXD.js file hai ya nahi hogi to res mai send kar dega aur req aage forward nahi karega aur agar nahi milli file to req ko aage forward kar dega aur wo request aage wildcard route mai handel ho jayegi, same for css 
+
+Backend ki url par frontend load karwa diya jisse do server(for frontend and backend) buy karne ki need hai sirf backend ko deploy karo frontend sath mai hi deploy ho jayega, ye primary and const effective way hai par aur bhi ways hote hai fullstack deployment ke 
