@@ -41,13 +41,13 @@ Another ex: Bank site(bank.com) and Hacker site(xyz.com) you cannot request on b
 
 -----------------------------------------------------------------------------
 
-=> Deployment -> We host our website on backend server url with wildcard route ex: http://localhost:3000/
+=> Deployment -> We host our website on backend server url using wildcard route ex: http://localhost:3000/
 1. npm run build: Run this command in frontend terminal this convert whole react project into html, css and js files in 'dist' folder
 2. In backend folder create 'public' folder and move that all three files with exact folder strucutre as it is in dist  from dist to public
 3. Create wildcard route in app.js app.use('*name', (req, res) => {res.send("This is wildcard)}) it is a middleware that will handel apis that we have not created ex: http://localhost:3000/dfsjhl 
 4. In response send index.html file, res.sendfile("file_absolute_path"), use "path" package for hiding absolute path,
    res.sendFile(path.join(__dirname, "..", "/public/index.html")) // __dirname: Path of current working directory
-5.
+5. app.use(express.static("./public")), Now this public folder is publically available we can access it ex: http://localhost:3000/index-BffdtEXD.js, in same way we can access any public folder files
 
 
 
