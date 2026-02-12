@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b0d;
+  display: flex;
+}
+
+#part1 {
+  height: 100%;
+  width: 26%;
+  /* background-color: black; */
+}
+
+#part2 {
+  height: 100%;
+  width: 67%;
+  background-color: #141417;
+  background-image: url("https://images.unsplash.com/photo-1553614187-14357326be37?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.85) contrast(1.08) saturate(0.95);
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(11,11,13,0.75),
+    rgba(11,11,13,0.35),
+    rgba(11,11,13,0.15)
+  );
+}
+
+#part3 {
+  height: 100%;
+  width: 7%;
+  /* background-color: rgb(12, 230, 81); */
+}
+
+.text-div {
+  /* height: 300px; */
+  position: absolute;
+  width: 400px;
+  /* background-color: red; */
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.text-div > h1 {
+  font-size: 95px;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 900;
+  line-height: 90px;
+  /* default line heiht is equal to font size */
+  letter-spacing: 4px;
+  color: #f1ede6;
+  text-transform: uppercase;
+}
+
+.small-img {
+  height: 400px;
+  width: 300px;
+  /* background-color: red; */
+  background-image: url("https://images.unsplash.com/photo-1741514376427-7b4bd9a5afc9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9) contrast(1.05) saturate(0.95);
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.vertical-text {
+  position: absolute;
+  transform: rotate(90deg);
+  right: -40%;
+  margin-top: 13px;
+  transform-origin: 0% 0%;
+  /* width: 100%; */
+  /* background-color: red; */
+}
+
+.vertical-text h1 {
+  font-size: 70px;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #f1ede6;
+  /* Used for adding strokes in text */
+}
+
+.nav{
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    z-index: 1;
+}
+
+.nav img{
+    height: 60px;
+    filter: brightness(0.95);
+}
+
+.nav h5{
+    font-size: 20px;
+    color: #f1ede6;
+    font-family: system-ui, sans-serif;
+}
