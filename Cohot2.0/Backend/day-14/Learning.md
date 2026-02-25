@@ -18,4 +18,4 @@ What this query does is, it will find data on the basis of username and email in
 => src > controller -> all the controllers(callbacks) will goes into this file
 authRouter.post("/login", async (req, res) => { }) 
 // async (req, res) => { } This part(callback) is controller
-// Api create hoti hai app.js mai and api ka logic likhte hai controller file mai
+// Api create hoti hai auth.route.js mai and api ka logic likhte hai controller file mai
