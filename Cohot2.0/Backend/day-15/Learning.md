@@ -34,14 +34,14 @@ const hash = await bcrypt.hash(password, 10) // 10: Salt -> Kitni baar hashing p
 
 => Protected Api: Only authorized user(they will have token) can access this type of apis
 
-=> Sending files using postman: User form-data format for sending file in req.body, and data will be feeded in key:value pairs
+=> Sending files using postman: Use form-data format for sending file in req.body, and data will be feeded in key:value pairs
 
 => By default express not able to read form-data format like we saw when we sending json(raw format) data and we used a middleware same for this we will use a middleware and we use a package called 'multer'
 
 => Multer: It use two types storage
            1. DiskStorage:- In this files will store in ssd, hdd etc, it is parmanent until we delete
            2. MemoryStorage:- In this files will store in RAM, it is temproray
-We generally use memory storage cause we dont store files in server(means server's storage)
+We generally use memory storage cause we dont store files in server(means server's storage for premanently)
 
 => Why we dont store files on server: Consider a user created one post, and that user have 2000 followers now server have to show(serve) that created post to all 2000 followers now that post size is 100kb then server use '100(imgsize) * 2000(followers) = 200000kb(200mb)' bandwidth(sharing of data from server to user and also vice-versa), when we deploy our application on internet using aws, azure, gcp, etc cloud plateform or without using this we have to use 200mb bandwidth and it will cost $0.09/GB this is costly, and this happen because of diskstorage(storing files on server), for elimating this burden we use memorystorage and cloud storage provider specially desinged for serving files now this provider will serve that post to all the users and this is comparetively cheap than direct serving from server
 
