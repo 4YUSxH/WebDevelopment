@@ -57,9 +57,12 @@ This is just one shop inside that mall — the storage shop. Specifically for ob
 => How we can transfer our local(on server) stored files to cloud storage provider: We send our files to this provider and it will return a url and using that url we can see that file
 For sending files to these providers we use multer and multer's MemoryStorage we temporarly store uploaded files on server than we send those files to cloud storage provider and when we get url from provider we delete that file from our server
 
-User(Frontend) -> Server(Backend) -> Coud Storage Provider
+User(Frontend) -> Server(Backend) -> Cloud Storage Provider
 
-// In post.route.js
+=> // In post.route.js
 const multer = require("multer")  
 const upload = multer({storage: multer.memoryStorage()}) // Create upload variable using memoryStorage
 postRouter.post("/", upload.single("image") ,postController.createPostContoller) // Use upload and pass key(used in form-data), The file is on stored on server's RAM 
+
+=> // In post.controller.js
+In this part we are sending file to imagekit cloud storage provider usign multer's provided buffer(Location where file is stored in our local system memory storage), after that file gets uploaded imagekit will provide url for accessing that uploaded image
