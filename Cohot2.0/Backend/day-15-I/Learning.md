@@ -67,7 +67,7 @@ postRouter.post("/", upload.single("image") ,postController.createPostContoller)
 => // In post.controller.js
 In this part we are sending file to imagekit cloud storage provider usign multer's provided buffer(Location where file is stored in our local system memory storage), after that file gets uploaded imagekit will provide url for accessing that uploaded image
 
-<!-- Day - 16 -->
+<!-- Day - 15-I -->
 
 => // In post.controller.js
 const token = req.cookies.token // User should send the cookies in response if he is authorized user(Registered/Login) cause only authorized user have token in his request
