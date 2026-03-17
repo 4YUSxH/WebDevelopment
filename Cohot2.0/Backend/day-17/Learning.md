@@ -97,4 +97,5 @@ const token = req.cookies.token // User should send the cookies in response if h
 
 => createPostContoller, getPostController, getPostDetailsController: In these apis we use token to identifying the user and for identification we use cookie and .verify() and we repeat this code again and again in each api for eliminating this repeatation we use middlewares  
 
-=> Cookies syntax: Use res.cookie while storing cookie and req.cookies wile reading the cookie
+
+<!-- Day - 17 -->

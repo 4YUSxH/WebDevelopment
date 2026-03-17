@@ -73,8 +73,8 @@ const getPostController = async (req, res) => {
   }
 
   const userId = decode.id; // decode.id contain user's id
-  const posts = await postModel.find({ user: userId }); // finding a posts with this userId
-  if (!posts) {
+  const posts = await postModel.find({ user: userId }); // finding postst with this userid
+  if (!post) {
     return res.status(404).json({
       message: "Post not found",
     });
@@ -114,7 +114,7 @@ const getPostDetailsController = async (req, res) => {
     });
   }
 
-  const isValidUserRequseting = post.user.toString() === userId;
+  const isValidUserRequseting = postId.toString() === userId;
   if (!isValidUserRequseting) {
     return res.status(403).json({
       message: "Forbidden access",
