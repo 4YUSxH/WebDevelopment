@@ -99,3 +99,15 @@ const token = req.cookies.token // User should send the cookies in response if h
 
 
 <!-- Day - 17 -->
+=> Middleware: 
+- const app = express() // This express instance(app) is entry for server, all the requests will enter from this, this app will forward all the requests to their respective routers like authRouter-api/auth, postRouter-api/posts, etc, now each router will forwards their requests to their respective apis like post-api/posts/, get-api/posts/, get-api/posts/details/:postId, etc, now these apis will forward requests to their respective controllers like createPostController, getPostController, getPostDetailsController, etc, In these all 3 controller we are repeating same task i.e identifying the user using token, Now we will write this repeatative code in different file 'middlwares(folder) > auth.middlware.js'      
+
+- Request flow: app -> router -> api -> middleware -> controller
+We'll use next() for forwarding control form middleware to another contoller/middleware,
+Note- we can't send normal variable in next directly we have to create a new property using 'req' then we can send data using next, Attach data to req (e.g., req.user = decoded) in middleware; next() only passes control, not data. 
+like below
+req.user = decoded;   // attach data to request
+next(req.user);       // go to next middleware/controller
+
+- Use this middlware in router like postRouter.get("/", identifyUser, postController.getPostController)
+
