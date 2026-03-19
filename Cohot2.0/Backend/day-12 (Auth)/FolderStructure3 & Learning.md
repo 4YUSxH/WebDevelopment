@@ -4,7 +4,7 @@ Day-10 and 11 are implemented in Day-9, Day-9 had takes 3 days to complete there
 1. routes > auth.route.js 
 In auth.routh.js file we use 'express.Router()' for creating route(api) in other files means app.js ke alawa kisi aur file mai api create karni ho to use hota hai
 
-=> Authenticatio: 
+=> Authentication: 
 
 I. Save user's data
 In auth.route.js file
