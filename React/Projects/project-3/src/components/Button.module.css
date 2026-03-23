@@ -1,0 +1,33 @@
+.outline{
+    background-color: white;
+    padding: 10px 18px;
+    border: 1px solid black;
+    border-radius: 5px; 
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.outline:hover{
+    background-color: black;
+    color: white;
+}
+
+.filled{
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    background-color: #000;
+    border-radius: 5px; 
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.filled:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}

@@ -1,0 +1,45 @@
+.play{
+    max-width: 1182px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top_left p:first-child{
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 54px;
+}
+
+.top_left p:last-child{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.boxes{
+    display: flex;
+    gap: 20px;
+}
+
+.top_right{
+    display: flex;
+    flex-direction: column;  
+    align-items: flex-end;
+    gap: 14px;
+}
+
+.top_right p{
+    font-weight: 600;
+    font-size: 20px;
+}
