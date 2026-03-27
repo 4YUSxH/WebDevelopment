@@ -112,7 +112,7 @@ next(req.user);       // go to next middleware/controller
 
 - Use this middlware in router like postRouter.get("/", identifyUser, postController.getPostController)
 
-<!-- Day - 17 -->
+<!-- Day - 18 -->
 
 => We are using edge collection(follow.model.js) for mainting followers in edge collection we create a new seprate collection for storign followers data like username or id, We do not store data inside userModel cause this way is not optimized for millions users, it will use too much time to find any data from array
 
@@ -126,4 +126,3 @@ Below validatins for backend level validations
 2. Express validator 
 3. Controller level validator
 4. Schema level validator
-
