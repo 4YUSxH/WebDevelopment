@@ -8,12 +8,22 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const handelSubmit = async (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
 
-    await axios.post("http://localhost:3000/api/auth/register", {
-      username, email, password
-    }, {withCredentials: true}).then((res) => {console.log(res.data)})
-  }
+    await axios
+      .post(
+        "http://localhost:3000/api/auth/register",
+        {
+          username,
+          email,
+          password,
+        },
+        { withCredentials: true },
+      )
+      .then((res) => {
+        console.log(res.data);
+      });
+  };
 
   return (
     <main>

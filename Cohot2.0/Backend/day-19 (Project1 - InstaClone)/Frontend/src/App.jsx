@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <AppRoutes />
-      {/* I will continue from here tommorrow */}
+             {/* I will continue from here tommorrow */}
     </>
   )
 }
