@@ -1,45 +1,15 @@
-import { createContext, useState, useEffect } from "react";
-import { login, register, getMe } from "./services/auth.api";
+import { createContext, useState } from "react";
+import {login, register, getMe} from "./services/api.auth"
 
-export const AuthContext = createContext()
+export const AuthContext = createContext(null)
 
 export const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(null) // null since no user logged-in in start
+    const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(false)
 
-    const handelLogin = async (username, password) => {
-        setLoading(true) // while user logged-in loading screenn will show, and this is not directly change UI
-
-        try{ // try to set usre
-            const response = await login(username, password) // this login function will return response.data
-            setUser(response)
-        }
-        catch(err){ // if user not logged-in
-            console.log(err);
-        }
-        finally{ // when user logged-in loading screen hide
-            setLoading(false)
-        }
-    } 
-
-    const handelRegister = async (username, email, password) => {
-        setLoading(true)
-
-        try{
-            const response = await register(username, email, password)
-            setUser(response)
-        }
-        catch(err){
-            console.log(err);
-        }
-        finally{
-            setLoading(false)
-        }
-    }
-
     return (
-        <AuthContext.Provider value={{user, loading, handelLogin, handelRegister}}>
+        <AuthContext.Provider value={{user, setUser, loading, setLoading}}>
             {children}
         </AuthContext.Provider>
     )
-} 
+}

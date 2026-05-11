@@ -159,3 +159,12 @@ Below validatins for backend level validations
 3. State:- frontend > src > features > auth > auth.context.js, In this project we are using context and when application gets bigger we will use redux, we store state and manage state in this layer  
 
 4. API:- frontend > src > features > auth > services > auth.api.js, in this file all the auth related backend communication code will goes, we will not write any ui realted code into this  
+
+=> Summary: This 4-layer architecture is essentially a good React app folder structure:
+
+- UI Layer: Only renders UI elements such as navigation and React Router pages (register, login, etc.). We do not call any APIs in this layer and do not write any API-related logic here.
+- Hook Layer: Manages state and interacts with the API layer. For example, it sets data in the state layer and calls APIs.
+- State Layer: Manages state such as loading state, user state (logged-in or not), and error management (errors rendered by the UI layer). Overall, it manages all the application’s data and variables.
+- API Layer: Handles communication with the backend and contains all API-calling logic.
+
+These layers cannot directly interfere with each other’s responsibilities. For example, the UI layer cannot call APIs directly. Instead, we create custom hooks in the hook layer, and the UI layer uses these hooks to request API calls. Each layer has a single, well-defined responsibility.
