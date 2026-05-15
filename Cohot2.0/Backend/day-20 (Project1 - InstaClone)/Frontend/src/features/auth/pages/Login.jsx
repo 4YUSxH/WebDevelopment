@@ -1,24 +1,32 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/form.scss";
-import {useAuth} from "../hook/useAuth"
+import { useAuth } from "../hook/useAuth";
 import { useState } from "react";
 
 const Login = () => {
-    const {user, loading, handelLogin} = useAuth()
+  const { user, loading, handelLogin } = useAuth();
 
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    const navigate = useNavigate() 
+  const navigate = useNavigate();
 
-    const handelSubmit = async (e) => {
-        e.preventDefault()
+  const handelSubmit = async (e) => {
+    e.preventDefault();
 
-        await handelLogin(username, password)
-        console.log("User logged-in");
+    await handelLogin(username, password);
+    console.log("User logged-in");
 
-        navigate("/")
-    }
+    navigate("/");
+  };
+
+  if (loading) {
+    return (
+      <main>
+        <h1>Loading...</h1>
+      </main>
+    );
+  }
 
   return (
     <main>

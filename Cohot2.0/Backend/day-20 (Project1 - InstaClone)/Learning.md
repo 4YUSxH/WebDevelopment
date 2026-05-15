@@ -140,7 +140,7 @@ Below validatins for backend level validations
 
 - Frontend > src > style.scss: This file contain global styling
 
-<!-- Day - 15 -->
+<!-- Day - 20 -->
 
 => 4 layer react architeture: 
 1. UI:- In this we only rendre ui, all the ui related codee goes into this layer, pages and components are the part of this layer
@@ -168,3 +168,52 @@ Below validatins for backend level validations
 - API Layer: Handles communication with the backend and contains all API-calling logic.
 
 These layers cannot directly interfere with each other’s responsibilities. For example, the UI layer cannot call APIs directly. Instead, we create custom hooks in the hook layer, and the UI layer uses these hooks to request API calls. Each layer has a single, well-defined responsibility.
+
+=> .populate:
+        await postModel.find().populate("user")
+
+Note - Schema should contain "ref: collection_name" for populating, ex 'ref: "users"' should added in postSchema
+
+1. Without populate - no user's data in response
+    "posts": [
+        {
+            "_id": "69f34bdcf920e2c500d04457",
+            "caption": "Hey",
+            "imgUrl": "https://ik.imagekit.io/hittinonapis/test_7s7nMRoNm",
+            "user": "69f2f6c4499002dd50e1ca53", // no user's data in response
+            "__v": 0
+        },
+             ]
+1. Without populate - user's data in response 
+    "posts": [
+        {
+            "_id": "69f34bdcf920e2c500d04457",
+            "caption": "Hey",
+            "imgUrl": "https://ik.imagekit.io/hittinonapis/test_7s7nMRoNm",
+            "user": { // user's data in response 
+                "_id": "69f2f6c4499002dd50e1ca53",
+                "username": "User1",
+                "email": "user1@user.com",
+                "password": "$2b$10$kqAZwtfmulNH2hWv6EDwWushVvcTNo6RiJzPycHIgBB0MwqtpTQFK", // Dont ever send password  
+                "bio": "I am a good boy",
+                "profileImage": "This is default profile image",
+                "__v": 0
+            },
+            "__v": 0
+        },
+             ]
+
+=>  {
+        type: String,
+        required: [true, "Password is required"],
+        select: false 
+    },
+In model if we add select false that key:value pair is not read by mongoose means we are not able to send that key:value as response anymore
+If we add this in userSchema we will face an issue when user try to login, cause we can't fetch(.findOne) user's password from database hence we can't compate user's entered password with password that stored in database, for removing this error add ".select(+password): in query that will fetch user's password from database, this select method force our query to fetch user's password from database 
+
+In authController
+const user = await userModel.findOne({
+    $or: [{ username: username }, { email: email }],
+}).select(+password);
+
+=> .lean(): This method will convert mongooseObject into plain js object

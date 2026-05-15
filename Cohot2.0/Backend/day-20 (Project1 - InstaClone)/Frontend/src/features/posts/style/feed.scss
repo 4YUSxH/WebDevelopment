@@ -1,0 +1,85 @@
+.feed-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #0c1014;
+
+  .feed {
+    max-width: 400px;
+    width: 100%;
+
+    .posts {
+      width: 100%;
+    }
+
+    .post {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-block: 1rem;
+
+      .user {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        padding-inline: 1rem;
+
+        .img-wrapper {
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid transparent;
+          background: conic-gradient(
+              #feda75,
+              #fa7e1e,
+              #d62976,
+              #962fbf,
+              #4f5bd5,
+              #feda75
+            )
+            border-box;
+        }
+
+        img {
+          width: 2rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+        }
+      }
+
+      .icons {
+        display: flex;
+        justify-content: space-between;
+
+        .left {
+          display: flex;
+          gap: 0.75rem;
+        }
+
+        .like {
+          color: red;
+        }
+
+        svg {
+          width: 1.5rem;
+          aspect-ratio: 1/1;
+          color: white;
+        }
+
+        button {
+          background-color: transparent;
+          border: unset;
+          outline: unset;
+        }
+      }
+
+      img {
+        width: 100%;
+        border: 2px solid #262626;
+        border-radius: 2%;
+      }
+    }
+  }
+}

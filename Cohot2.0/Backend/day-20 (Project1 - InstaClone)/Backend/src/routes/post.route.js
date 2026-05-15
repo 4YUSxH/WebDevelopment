@@ -22,4 +22,8 @@ postRouter.get("/details/:postId", identifyUser, postController.getPostDetailsCo
 // Description - Like a post with id provided in the req.params
 postRouter.post("/like/:postId", identifyUser, postController.likePostController)
 
+// Route - GET -> /api/posts/feed
+// Description - Get all the posts created in db
+postRouter.get("/feed", identifyUser, postController.getFeedController)
+
 module.exports = postRouter

@@ -13,12 +13,13 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, "Password is required"] 
+    required: [true, "Password is required"],
+    select: false 
   },
   bio: String,
   profileImage: {
     type: String,
-    default: "Default pic link goes here"
+    default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkHSvjv8ojrzT3FnaHlahE5lrf0lmo-ki6mw&s"
   },
 });
 

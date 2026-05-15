@@ -1,15 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/form.scss";
-import { useState } from "react";
+import { useAuth } from "../hook/useAuth";
+import { useReducer, useState } from "react";
 
 const Register = () => {
+  const { loading, handelRegister } = useAuth();
+
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handelSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handelSubmit = async (e) => {
     e.preventDefault();
+
+    await handelRegister(username, email, password);
+
+    navigate("/");
   };
+
+  if (loading) {
+    return (
+      <main>
+        <h1>Loading...</h1>
+      </main>
+    );
+  }
 
   return (
     <main>
