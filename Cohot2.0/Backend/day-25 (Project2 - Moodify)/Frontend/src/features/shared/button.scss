@@ -1,0 +1,32 @@
+.button {
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &.primary-button {
+        background: #d20c3d;
+        color: #fff;
+
+        &:hover {
+            background: #eb1b4f;
+            box-shadow: 0 8px 20px rgba(210, 12, 61, 0.3);
+        }
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}

@@ -1,0 +1,94 @@
+.form-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 420px;
+    background: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #d20c3d;
+        margin-bottom: 0.4rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+
+        label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #f3f3f3;
+            text-transform: capitalize;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: #272727;
+            border: 1px solid transparent;
+            border-radius: 0.8rem;
+            color: whitesmoke;
+            font-size: 0.95rem;
+            transition: 0.25s ease;
+
+            &::placeholder {
+                color: #8f8f8f;
+            }
+
+            &:focus {
+                outline: none;
+                border-color: #d20c3d;
+                background: #303030;
+            }
+        }
+    }
+
+    button {
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    .form-footer {
+        margin-top: 1.5rem;
+        text-align: center;
+        color: #b5b5b5;
+
+        a {
+            font-weight: 600;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .form-page {
+        padding: 1rem;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+}
