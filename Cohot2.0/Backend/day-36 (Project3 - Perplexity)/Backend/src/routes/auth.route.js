@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import { getMeController, loginController, registerController, verifyEmailController, resendVerificationController, forgetPasswordController, logoutController } from '../controllers/auth.controller.js'
+import { getMeController, loginController, registerController, verifyEmailController, resendVerificationController, logoutController } from '../controllers/auth.controller.js'
 import { loginValidator, registerValidator } from '../validators/auth.validator.js'
 import { identifyUser } from '../middlewares/auth.middleware.js'
 

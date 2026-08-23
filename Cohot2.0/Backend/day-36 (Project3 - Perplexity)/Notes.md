@@ -70,3 +70,21 @@ We provide mail data in html formate to transporter and transporter tells smtp s
    - Providing an APIs to access the LLM
 These all three tasks required lots of resources such as money, time, storage, etc
 Popular ex- OpenAI, Google, Microsoft, Anthropic, etc
+
+<!-- Frontend -->
+
+1. While performing any kind of hydration the loading state will be true
+
+2. Link vs Navigate
+- Link - User has to click on link tag for redirection and it is a html <a> tag
+
+- Navigate - It will prgramatically redirect the user without clicking
+
+3. Socket.io in Frontend(Client) side: In this part we are connecting user with server via socket.io for establishing connection
+
+- npm i socket.io-client
+- Intialize socket server at client side
+
+- chat.service.js - Intializing socket.io connection with backend
+- useChat.js - Creating custom hook which return intialization code that we've created before in chat.service.js
+- Dashboard.jsx - Establishing connection between frontend and backend on this page, when user loggedIn use will connected to backend via socket
