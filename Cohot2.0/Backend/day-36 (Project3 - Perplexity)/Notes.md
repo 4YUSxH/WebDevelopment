@@ -1,3 +1,4 @@
+<!-- Day-34 -->
 1.  userSchema.pre('save', async function () {
     if (!this.isModified('password')) return;
     this.password = await bcrypt.hash(this.password, 10);
@@ -56,6 +57,8 @@ We provide mail data in html formate to transporter and transporter tells smtp s
    - After click req is send to server and server verify token, token store user'data
    - When token is verified we change verified:true 
 
+<!-- Day35 -->
+
 7. LangChain: It is a framework that helps developers build AI applications by connecting LLMs like GPT with tools, APIs, databases, and their own data.
 
 - npm install @langchain/google-genai langchain
@@ -71,7 +74,7 @@ We provide mail data in html formate to transporter and transporter tells smtp s
 These all three tasks required lots of resources such as money, time, storage, etc
 Popular ex- OpenAI, Google, Microsoft, Anthropic, etc
 
-<!-- Frontend -->
+<!-- Day-36 -->
 
 1. While performing any kind of hydration the loading state will be true
 
@@ -88,3 +91,5 @@ Popular ex- OpenAI, Google, Microsoft, Anthropic, etc
 - chat.service.js - Intializing socket.io connection with backend
 - useChat.js - Creating custom hook which return intialization code that we've created before in chat.service.js
 - Dashboard.jsx - Establishing connection between frontend and backend on this page, when user loggedIn use will connected to backend via socket
+
+<!-- Day-37 -->
