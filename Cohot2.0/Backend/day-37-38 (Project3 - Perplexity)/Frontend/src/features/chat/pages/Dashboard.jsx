@@ -72,7 +72,7 @@ const Dashboard = () => {
               P
             </div>
 
-            <span className="text-lg font-semibold text-white">Perplexity</span>
+            <span className="text-lg font-semibold text-white">Aynora</span>
           </div>
         </div>
 
@@ -155,10 +155,6 @@ const Dashboard = () => {
                 />
               </svg>
             </button>
-
-            <h1 className="text-sm font-medium text-gray-200 sm:text-base">
-              Future of artificial intelligence
-            </h1>
           </div>
 
           {/* RIGHT ACTIONS */}
