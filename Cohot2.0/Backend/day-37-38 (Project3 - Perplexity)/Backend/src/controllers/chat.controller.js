@@ -26,7 +26,6 @@ export const sendMessageController = async (req, res) => {
 
   //   Fetching all the message so that we can feed this to AI and AI can also access old questions
   const messages = await messageModel.find({ chat: chatId || chat._id });
-  console.log(messages);
 
   //   Generating response using AI service
   const result = await generateResponse(messages);
@@ -45,7 +44,7 @@ export const getChatsController = async (req, res) => {
 
   const chats = await chatModel.find({ user: userId });
 
-  return res.json(200).json({
+  return res.status(200).json({
     message: "Chats fetched successfully",
     chats,
   });
@@ -76,24 +75,24 @@ export const getMessagesController = async (req, res) => {
 };
 
 export const deleteChatController = async (req, res) => {
-  const {chatId} = req.params
-  
+  const { chatId } = req.params;
+
   const chat = await chatModel.findOneAndDelete({
     _id: chatId,
-    user: req.user.id
-  })
+    user: req.user.id,
+  });
 
   await messageModel.deleteMany({
-    chat: chatId
-  })
+    chat: chatId,
+  });
 
-  if(!chat){
+  if (!chat) {
     return res.status(404).json({
-      message: "Chat not found"
-    })
+      message: "Chat not found",
+    });
   }
 
   return res.status(200).json({
-    message: "Chat deleted successfully"
-  })
-}
+    message: "Chat deleted successfully",
+  });
+};
