@@ -1,33 +1,36 @@
 <!-- Day-34 -->
+
 1.  userSchema.pre('save', async function () {
     if (!this.isModified('password')) return;
     this.password = await bcrypt.hash(this.password, 10);
-});
-// This code piece run before saving the user into database
+    });
+    // This code piece run before saving the user into database
 
-2. userSchema.methods.comparePassword = function (candidatePassword) {
+2.  userSchema.methods.comparePassword = function (candidatePassword) {
     return bcrypt.compare(candidatePassword, this.password);
-};
-// Above code will add comparePassword method in userSchema/userModel, whenever we find user from userSchema this method will also accessible.
-Ex - const user = userModel.findOne({email})
-     user.comparePassword("plain_text_password").then(isMatch => {})
+    };
+    // Above code will add comparePassword method in userSchema/userModel, whenever we find user from userSchema this method will also accessible.
+    Ex - const user = userModel.findOne({email})
+    user.comparePassword("plain_text_password").then(isMatch => {})
 
-3. 
-// JS longHand
+3.  // JS longHand
+
 - const user = await userModel.create({
-    username: username,
-    email: email,
-    password: password
-});
+  username: username,
+  email: email,
+  password: password
+  });
 
-// JS shorthand it is same as {username: username, ...}, Both are same thing 
+// JS shorthand it is same as {username: username, ...}, Both are same thing
+
 - const user = await userModel.create({
-    username,
-    email,
-    password
-});
+  username,
+  email,
+  password
+  });
 
-4. Implementing nodemailer: 
+4. Implementing nodemailer:
+
 - Create new project on google cloud console
 - Select created project
 
@@ -42,20 +45,21 @@ Ex - const user = userModel.findOne({email})
 For implementing nodemailer we need these 4: GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN, GOOGLE_USER, in above steps we are generating those 4 things
 
 5. Web servers ---> SMTP Servers
-WS - is not able to send email
-SMTP -  Simple Mail Transfer Protocol servers are able to send mails
+   WS - is not able to send email
+   SMTP - Simple Mail Transfer Protocol servers are able to send mails
+
 - Web server communicate with SMTP server for sending mails, and Transporter is used for establishing communication between WS ans SMTP Server
 
 WS ---> Transporter ---> SMTP
 We provide mail data in html formate to transporter and transporter tells smtp server to send a mail
 
-- Now those 4 keys are use for using google's smtp servers, we cant use smtp servers without any credentials cause they are not free 
+- Now those 4 keys are use for using google's smtp servers, we cant use smtp servers without any credentials cause they are not free
 
 6. Verification flow:
    - We send token with verification link
-   - User click on that link 
+   - User click on that link
    - After click req is send to server and server verify token, token store user'data
-   - When token is verified we change verified:true 
+   - When token is verified we change verified:true
 
 <!-- Day35 -->
 
@@ -63,7 +67,7 @@ We provide mail data in html formate to transporter and transporter tells smtp s
 
 - npm install @langchain/google-genai langchain
 
-- model: "gemini-3.7-flash", // Selecting appropriate ai model, In ai.service.js  
+- model: "gemini-3.7-flash", // Selecting appropriate ai model, In ai.service.js
 
 8. GenAI: Generating new content on the basis of old data, content-video, audio, image, text, code
 
@@ -71,14 +75,15 @@ We provide mail data in html formate to transporter and transporter tells smtp s
    - Train the LLM
    - Hosting the LLM
    - Providing an APIs to access the LLM
-These all three tasks required lots of resources such as money, time, storage, etc
-Popular ex- OpenAI, Google, Microsoft, Anthropic, etc
+     These all three tasks required lots of resources such as money, time, storage, etc
+     Popular ex- OpenAI, Google, Microsoft, Anthropic, etc
 
 <!-- Day-36 -->
 
 1. While performing any kind of hydration the loading state will be true
 
 2. Link vs Navigate
+
 - Link - User has to click on link tag for redirection and it is a html <a> tag
 
 - Navigate - It will prgramatically redirect the user without clicking
@@ -93,6 +98,14 @@ Popular ex- OpenAI, Google, Microsoft, Anthropic, etc
 - Dashboard.jsx - Establishing connection between frontend and backend on this page, when user loggedIn use will connected to backend via socket
 
 <!-- Day-37 -->
+
 1. Use small models for tiny tasks such as generating title for chat, so that we can minimize our pricing
 
 2. SystemMessage: It is used for giving Instructions to ai such as "create title based on user's message"
+
+<!-- Day-37 -->
+
+1. data.map((msg, idx) => ())
+   When you use () after fat-arrow it is short hand for return
+   data.map((msg, idx) => {return })
+   When you write using this{} you have to write return for making UI render
