@@ -48,4 +48,24 @@ Changes in Child will affect Parent
 # 4. Interfaces: 
     Create by using 'interface' keywords it tells TS which field a object will contain
 
-# 
+# 5. Type Aliases: 
+    Giving custome name to types
+    type value = number | boolean | string | null;
+    let a: value;
+
+# 6. Union Types:
+    let a: number | null; // 'a' can be a number OR null
+    This '|' is called union 
+
+# 6. Intersection Types:
+    See code
+
+# 7. Classes and Objects: 
+
+1. Class: It is a blueprint or template for creating objects
+
+2. Constructor: While creating objects using Class blueprint we have to pass different data for each object for this we use constructors
+
+3. this: 'this' keyword is used to accsess that data created outside the constructor
+
+4. Access Modifiers: 
