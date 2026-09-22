@@ -69,3 +69,16 @@ Changes in Child will affect Parent
 3. this: 'this' keyword is used to accsess that data created outside the constructor
 
 4. Access Modifiers: 
+    a. Public: Can access the data anywhere
+    b. Private: Only in same class
+    c. Protected: Can be accessible in same class and Child class
+
+5. Optional Properties: 
+    constructor (public gender?: string)
+    Gender is optional while creating an object
+
+6. Parameter Properties: 
+    It is a different way of creating a constructor, there is no need to declare and initiliaze the parameteres variables 
+
+# 8. readonly: 
+    By using readonly keyword that field is cannot be changed means it is readonly property 
