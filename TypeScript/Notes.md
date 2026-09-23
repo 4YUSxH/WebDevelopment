@@ -80,5 +80,18 @@ Changes in Child will affect Parent
 6. Parameter Properties: 
     It is a different way of creating a constructor, there is no need to declare and initiliaze the parameteres variables 
 
+7. Getters and Setters: 
+    In modern days it is irrelevent but for legacy codebase you can find these
+
+    Getter is a method inside a class that read the values
+    Setter is a method inside a class that write the values
+
+8. Static Members
+
+
+
+
+
+
 # 8. readonly: 
     By using readonly keyword that field is cannot be changed means it is readonly property 
