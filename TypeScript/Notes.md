@@ -86,12 +86,57 @@ Changes in Child will affect Parent
     Getter is a method inside a class that read the values
     Setter is a method inside a class that write the values
 
-8. Static Members
+8. Static Members: 
+    We doesn't have to create an object for accessing class fields 
 
+9. Abstract Classes: 
+    Human -> Abtract Concept
+    Ayush -> Implementation of concept
 
+    Tree -> Abtract Concept
+    Mongo Tree -> Implementation of concept
 
-
-
+    An abstract class is basically a class that is meant to be inherited, not directly used.
 
 # 8. readonly: 
     By using readonly keyword that field is cannot be changed means it is readonly property 
+
+# 9. Functions: 
+    Functions contain the code and it wll only execute when you want to be execute
+
+1. Function Types:
+    Providing type to callback in paramters
+    function abcd(name: string, cb: () => void)
+
+2. Optional Parameters In Fuctions: 
+    function abcd(name: string, age: number, gender?: string)
+    // Passing gender when calling a function is optional
+
+3. Default Parameters In Fuctions: 
+    function abcd(name: string, age: number, gender: string = "no gender")
+
+4. Rest Parameter: 
+    function abcd(...arr: number[])
+
+    abcd(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    // All the arguments will passed to arr parameter array, no need to create multiple parameter variables
+
+5. Function Overloading: 
+    Two or more functions with same name but with different parameters
+
+    function abcd(a: string): void;
+    function abcd(a: string, b: number): number;
+
+# 10. Generics: 
+    Hum ek function ko use karte waqt bata sakte hai ki funciton arguement ko kis type se treat kare
+
+
+    function abcd(a: "Will tell the tyep whlie calling it")
+
+# 11. Type Assertion: 
+    Type assertion ka matlab batana ts ko ki particular variable ka type kya hai, ye ap tab karte ho jab ap ts se jyada uss variable ka type jaante ho
+
+# 12. Type Narrowing: 
+    Performing checks(if-else) to confirm the datatype of data
+    
+    if(typeof a === "string")
