@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Server will throw error when enviormental variable is undefined/not found
+
 if (!process.env.MONGO_URI) {
   throw new Error("MONGO_URI is not defined in environment variables");
 }

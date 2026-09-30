@@ -7,7 +7,7 @@ const sendTokenResponse = async (user, res, message) => {
     expiresIn: "7d",
   });
 
-  res.cookie("token", token)
+  res.cookie("token", token);
 
   res.status(200).json({
     message,
@@ -43,10 +43,35 @@ export const registerController = async (req, res) => {
       role: isSeller ? "seller" : "buyer",
     });
 
-    await sendTokenResponse(user, res, "User registered successfully")
-
+    await sendTokenResponse(user, res, "User registered successfully");
   } catch (err) {
-    console.log(error);
+    console.log(err);
     return res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const loginController = async (req, res) => {
+  const { email, password } = req.body;
+  console.log("Controller " + email, password);
+
+  try {
+    const user = await userModel.findOne({ email }).select("+password");
+    if (!user) {
+      return res.status(400).json({
+        message: "Invalid email or password",
+      });
+    }
+
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch) {
+      return res.status(400).json({
+        message: "Invalid email or password",
+      });
+    }
+
+    await sendTokenResponse(user, res, "User logged in successfully");
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: "Server error" + err });
   }
 };

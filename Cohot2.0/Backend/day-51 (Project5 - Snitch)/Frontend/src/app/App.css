@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+/* Global base reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0A0A0A;
+  color: #EDEDED;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B2B2B;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F5C518;
+}
