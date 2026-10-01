@@ -90,17 +90,17 @@ export const googeCallbackController = async (req, res) => {
   const { id, displayName, emails, photos } = req.user;
 
   // Finding the user on the basis of email
-  const user = await userModel.findOne({ email: emails[0].value });
+  let user = await userModel.findOne({ email: emails[0].value });
   if (!user) {
     // If user is not found, create a new user, for registration
-    const newUser = await userModel.create({
+    user = await userModel.create({
       email: emails[0].value,
       fullname: displayName,
       googleId: id,
     });
   }
 
-  const token = jwt.sign({ id: user ? user.id : newUser.id }, config.JWT_SECRET, {
+  const token = jwt.sign({ id: user._id }, config.JWT_SECRET, {
     expiresIn: "7d",
   });
 
