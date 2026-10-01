@@ -12,22 +12,40 @@ export const useAuth = () => {
     fullname,
     isSeller = false,
   }) => {
-    const data = await register({
-      email,
-      contact,
-      password,
-      fullname,
-      isSeller,
-    });
+    try {
+      dispatch(setLoading(true));
 
-    dispatch(setUser(data.user));
+      const data = await register({
+        email,
+        contact,
+        password,
+        fullname,
+        isSeller,
+      });
+
+      dispatch(setUser(data.user));
+    } catch (err) {
+      dispatch(
+        setError(err.response?.data?.messsage || "Registeration failed"),
+      );
+    } finally {
+      dispatch(setLoading(false));
+    }
   };
 
-  const handleLogin = async ({email, password}) => {
-    const data = await login({email, password})
+  const handleLogin = async ({ email, password }) => {
+    try {
+      dispatch(setLoading(true));
 
-    dispatch(setUser(data.user))
-  }
+      const data = await login({ email, password });
+
+      dispatch(setUser(data.user));
+    } catch (err) {
+      dispatch(setError(err.response?.data?.message || "Login failed"));
+    } finally {
+      dispatch(setLoading(false));
+    }
+  };
 
   return {
     handleRegister,
