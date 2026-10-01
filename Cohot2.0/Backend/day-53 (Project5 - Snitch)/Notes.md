@@ -42,3 +42,8 @@ Browser is making requests to 5173 port and that port transferring requests to 3
 The main reason of using proxy is development convenience
 
 You can use CORS package if you want
+
+# Google OAuth Flow:  
+  - When use click on "Continue with google" button he will redirect to /api/auth/google and this api take him to server and server again redirect user to google server for selecting account and take permission from user
+
+  - After permission grant user redirect to /google/callback and now user is on server and user has auth code and passport.authenticate() this middleare sent user's auth to google for verification and google return data to server in req.user and this middleware transfer control using next() to googleCallbackController on in this controller we can perform register and login  

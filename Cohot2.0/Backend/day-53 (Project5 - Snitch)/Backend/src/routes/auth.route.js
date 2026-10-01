@@ -16,6 +16,7 @@ authRouter.post("/register", registerValidator, registerController);
 
 authRouter.post("/login", loginValidator, loginController);
 
+// this api is for google login, it will redirect user to google login page and after login it will redirect to google/callback api
 authRouter.get(
   "/google",
   passport.authenticate("google", { scope: ["profile", "email"] }),
