@@ -394,7 +394,7 @@ const Register = () => {
             </div>
 
             {/* Google Button */}
-            <div className="mt-4">
+            <div className="mt-6">
               <GoogleButton />
             </div>
 
