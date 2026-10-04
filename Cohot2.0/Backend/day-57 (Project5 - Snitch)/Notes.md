@@ -52,3 +52,10 @@ You can use CORS package if you want
   good way: const products = useSelector(state => state.product.allProducts)
 
   bad way: const {allProducts} = useSelector(state => state.product)
+
+# Attributes: 
+  attributes: {
+    type: Map,
+    of: String
+  }
+  attributes is a Mongoose Map where the keys can be dynamic, but all values must be strings.
