@@ -48,10 +48,7 @@ You can use CORS package if you want
 
   - After permission grant user redirect to /google/callback and now user is on server and user has auth code and passport.authenticate() this middleare sent user's auth to google for verification and google return data to server in req.user and this middleware transfer control using next() to googleCallbackController on in this controller we can perform register and login  
 
+# Never desturucture properties while using useSelector: 
+  good way: const products = useSelector(state => state.product.allProducts)
 
-Statement: Product creation 
-Requirements: - Only seller can create prducts
-              - Seller can see all this listed product on a single page
-
-Seller can view his/her products on a page 
-That page should be protected means only seller can access it 
+  bad way: const {allProducts} = useSelector(state => state.product)
