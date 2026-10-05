@@ -33,6 +33,7 @@ export const addProductVariant = async (productId, newProductVariant) => {
   const formData = new FormData();
 
   newProductVariant.images.forEach((image) => {
+    console.log("API: " + image.file);
     formData.append("images", image.file);
   });
 

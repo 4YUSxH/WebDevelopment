@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useProduct } from "../hooks/useProduct";
 import { useParams, useNavigate, Link } from "react-router";
 import {
@@ -31,15 +31,18 @@ const ProductDetails = () => {
   const [addedToCart, setAddedToCart] = useState(false);
   const [boughtNow, setBoughtNow] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [selectedAttributes, setSelectedAttributes] = useState({});
 
   useEffect(() => {
     const fetchProductDetail = async () => {
       try {
         setLoading(true);
 
-        const data = await handleGetProductDetails(productId );
+        const data = await handleGetProductDetails(productId);
 
         setProduct(data);
+        setSelectedAttributes({});
+        setSelectedImageIndex(0);
       } catch (error) {
         console.error("Failed to fetch product:", error);
         setProduct(null);
@@ -51,9 +54,75 @@ const ProductDetails = () => {
     if (productId) {
       fetchProductDetail();
     }
-  }, [productId]);
+  }, [handleGetProductDetails, productId]);
 
-  const images = product?.images || [];
+  const variants = useMemo(() => product?.variants || [], [product?.variants]);
+  const attributeNames = useMemo(() => {
+    const names = new Set();
+    variants.forEach((variant) => {
+      Object.keys(variant.attributes || {}).forEach((name) => names.add(name));
+    });
+    return [...names];
+  }, [variants]);
+
+  const attributeOptions = useMemo(() => {
+    return attributeNames.reduce((options, name) => {
+      const compatibleVariants = variants.filter((variant) =>
+        Object.entries(selectedAttributes).every(
+          ([selectedName, selectedValue]) =>
+            selectedName === name ||
+            !selectedValue ||
+            variant.attributes?.[selectedName] === selectedValue,
+        ),
+      );
+      options[name] = [
+        ...new Set(
+          compatibleVariants
+            .map((variant) => variant.attributes?.[name])
+            .filter(Boolean),
+        ),
+      ];
+      return options;
+    }, {});
+  }, [attributeNames, selectedAttributes, variants]);
+
+  const selectedVariant = useMemo(() => {
+    if (!variants.length || !Object.keys(selectedAttributes).length) return null;
+
+    const exactVariant = variants.find((variant) =>
+      attributeNames.every(
+        (name) => variant.attributes?.[name] === selectedAttributes[name],
+      ),
+    );
+
+    if (exactVariant) return exactVariant;
+
+    return (
+      variants.find((variant) =>
+        Object.entries(selectedAttributes).every(
+          ([name, value]) => variant.attributes?.[name] === value,
+        ),
+      ) || variants[0]
+    );
+  }, [attributeNames, selectedAttributes, variants]);
+
+  const variantImages = (selectedVariant?.images || []).filter(
+    (image) => image?.url,
+  );
+  const images =
+    variantImages.length > 0 ? variantImages : product?.images || [];
+  const price = selectedVariant?.price || product?.price;
+  const availableStock = selectedVariant?.stock ?? null;
+
+  const handleAttributeSelect = (name, value) => {
+    setSelectedAttributes((current) => ({ ...current, [name]: value }));
+    setSelectedImageIndex(0);
+  };
+
+  const handleOriginalProductSelect = () => {
+    setSelectedAttributes({});
+    setSelectedImageIndex(0);
+  };
 
   const handlePrevImage = () => {
     setSelectedImageIndex((prev) =>
@@ -308,8 +377,8 @@ const ProductDetails = () => {
 
                 <div className="mb-4 flex items-baseline gap-2.5">
                   <span className="text-lg sm:text-xl font-medium tracking-wider">
-                    {product.price?.currency}{" "}
-                    {Number(product.price?.amount || 0).toLocaleString()}
+                    {price?.currency}{" "}
+                    {Number(price?.amount || 0).toLocaleString()}
                   </span>
 
                   <span className="text-[10px] uppercase tracking-[0.15em] text-[#7A6E63]">
@@ -321,10 +390,93 @@ const ProductDetails = () => {
                   {product.description}
                 </p>
 
+                {attributeNames.length > 0 && (
+                  <div className="mb-6 space-y-5 border-y border-[#e4e2df] py-5">
+                    <div className="flex items-center justify-between gap-3">
+                      <button
+                        type="button"
+                        onClick={handleOriginalProductSelect}
+                        className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[10px] font-medium uppercase tracking-[0.14em] transition-colors ${
+                          !selectedVariant
+                            ? "border-[#1b1c1a] bg-[#1b1c1a] text-white"
+                            : "border-[#C9A96E] bg-[#fffdf9] text-[#1b1c1a] hover:bg-[#f5f3f0]"
+                        }`}
+                        aria-pressed={!selectedVariant}
+                      >
+                        <span
+                          className={`flex h-4 w-4 items-center justify-center rounded-full border ${
+                            !selectedVariant
+                              ? "border-[#C9A96E] bg-[#C9A96E] text-[#1b1c1a]"
+                              : "border-[#cfc9c2] text-transparent"
+                          }`}
+                        >
+                          <Check size={12} strokeWidth={3} />
+                        </span>
+                        Original product
+                      </button>
+                      <span className="text-[9px] uppercase tracking-[0.16em] text-[#7A6E63]">
+                        Choose a variant
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <span className="h-px flex-1 bg-[#e4e2df]" />
+                      <span className="h-px flex-1 bg-[#e4e2df]" />
+                    </div>
+
+                    {attributeNames.map((name) => (
+                      <div key={name}>
+                        <div className="mb-2 flex items-center justify-between">
+                          <span className="text-[10px] uppercase tracking-[0.2em] text-[#7A6E63]">
+                            {name}
+                          </span>
+                          <span className="text-[11px] text-[#1b1c1a]">
+                            {selectedAttributes[name] || "Select"}
+                          </span>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2">
+                          {attributeOptions[name]?.map((value) => {
+                            const selected = selectedAttributes[name] === value;
+                            return (
+                              <button
+                                key={value}
+                                type="button"
+                                onClick={() => handleAttributeSelect(name, value)}
+                                className={`border px-3 py-2 text-[10px] uppercase tracking-[0.15em] transition-colors ${
+                                  selected
+                                    ? "border-[#1b1c1a] bg-[#1b1c1a] text-white"
+                                    : "border-[#e4e2df] text-[#7A6E63] hover:border-[#C9A96E] hover:text-[#1b1c1a]"
+                                }`}
+                              >
+                                {value}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {selectedVariant && (
+                  <div className="mb-6 flex items-center justify-between text-[10px] uppercase tracking-[0.16em]">
+                    <span className="text-[#7A6E63]">
+                      {availableStock > 0 ? `${availableStock} available` : "Out of stock"}
+                    </span>
+                    {selectedVariant.price || selectedVariant.images?.length > 0 ? (
+                      <span className="text-[#C9A96E]">Variant selected</span>
+                    ) : (
+                      <span className="text-[#a49a90]">Showing product details</span>
+                    )}
+                  </div>
+                )}
+
                 {/* Actions */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                   <button
                     onClick={handleBuyNow}
+                    disabled={availableStock === 0}
                     className="w-full py-3.5 px-5 text-xs uppercase tracking-[0.25em] font-medium flex items-center justify-center gap-2"
                     style={{
                       backgroundColor: boughtNow ? "#C9A96E" : "#1b1c1a",
@@ -346,6 +498,7 @@ const ProductDetails = () => {
 
                   <button
                     onClick={handleAddToCart}
+                    disabled={availableStock === 0}
                     className="w-full py-3.5 px-5 text-xs uppercase tracking-[0.25em] font-medium flex items-center justify-center gap-2 border border-[#1b1c1a]"
                     style={{
                       backgroundColor: addedToCart ? "#1b1c1a" : "transparent",

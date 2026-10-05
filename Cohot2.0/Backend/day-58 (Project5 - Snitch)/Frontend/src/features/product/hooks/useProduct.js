@@ -43,6 +43,8 @@ export const useProduct = () => {
   const handleAddProductVariant = async (productId, newProductVariant) => {
     const data = await addProductVariant(productId, newProductVariant);
 
+    console.log("Hook: " + newProductVariant)
+
     return data;
   };
 

@@ -19,7 +19,7 @@ export const createProductController = async (req, res) => {
       amount: priceAmount,
       currency: priceCurrency,
     },
-    images: images.map((url) => ({ url })),
+    images: images.map((image) => ({ url: image.url })),
   });
 
   res.status(201).json({
@@ -94,22 +94,22 @@ export const addProductVariantController = async (req, res) => {
 
   const files = req.files;
   const images = [];
-  if (files || files.length !== 0) {
-    const uploadedImages = (
+  if (files && files.length > 0) {
+    (
       await Promise.all(
-        files.map(async (file) => {
-          const url = await uploadImage(file, file.originalname);
-          return url;
+        req.files.map(async (file) => {
+          const image = await uploadImage(file, file.originalname);
+          return image;
         }),
       )
-    ).map((url) => images.push(url));
+    ).map((image) => images.push(image));
   }
 
-  const price = req.body.price;
+  console.log("Images uploaded from controller:", images);
+
+  const price = req.body.priceAmount;
   const stock = req.body.stock;
   const attributes = JSON.parse(req.body.attributes || "{}");
-
-  console.log(product, images, price, stock, attributes);
 
   product.variants.push({
     images,

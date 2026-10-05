@@ -33,7 +33,7 @@ const emptyDraft = () => ({
 const readImage = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload = () => resolve({ url: reader.result, name: file.name });
+    reader.onload = () => resolve({ url: reader.result, name: file.name, file });
     reader.onerror = () => reject(new Error(`Could not read ${file.name}`));
     reader.readAsDataURL(file);
   });
@@ -90,7 +90,6 @@ const SellerProductDetails = () => {
       localStorage.setItem(`${STORAGE_KEY}:${productId}`, JSON.stringify(variants));
     } catch (storageError) {
       console.error("Could not save product variants locally:", storageError);
-      setError("Local storage is full. Remove some variant images and try again.");
     }
   }, [productDetails, productId, variants]);
 
@@ -196,6 +195,8 @@ const SellerProductDetails = () => {
         ? { price: { amount: Number(draft.price), currency: draft.currency } }
         : {}),
     };
+
+    console.log("Fronted: " + variant)
 
     await handleAddProductVariant(productId, variant);
 
