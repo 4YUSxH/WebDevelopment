@@ -1,0 +1,23 @@
+# Creating base for a image: Node + Lightweight Linux OS
+FROM node:20-alpine -> Node + Linux OS added 
+# FROM is used to specify the base image for the Docker image. In this case, we are using the official Node.js image with version 20 and Alpine Linux as the base operating system.
+
+# Copying package.json file to the working directory of the Docker image
+COPY ./package.json .
+COPY ./package-lock.json  .
+# We can download the dependencies from using package.json and package-lock.json 
+
+# Installing dependencies using npm
+RUN npm install
+# node_modules folder is created in the image and all the dependencies are installed in it.
+
+# Copying the server.js file to the working directory of the Docker image
+COPY ./server.js .
+
+# Start server.js file when the container is started
+CMD ["node", "server.js"]
+
+# These are the commands that will be used to build a image
+# Above commands are only executed when the image is built. So, if we change the server.js file, we need to rebuild the image to reflect the changes in the container.
+
+# docker build -t <image_name> . -> This command is used to build the Docker image. The -t flag is used to specify the name of the image. The . at the end specifies the current directory as the build context. when you run this command, Docker will look for a Dockerfile in the current directory and execute the commands in it to build the image.
