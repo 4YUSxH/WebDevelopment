@@ -14,7 +14,7 @@
 
     3. You can download dependencies using "npm install" if you have "package.json" and "package-lock.json"
 
-    3. Creat docker file   
+    3. Creat docker file: dockerfile is blueprint of creating an image
         - FROM node:20-alpine -> Base image added, Node + Linux OS added 
         - COPY ./package.json . 
           COPY ./package-lock.json  . -> Copying dependencies file 
@@ -37,3 +37,5 @@ Images are immutable if you made any mistake while creating dockerfile that you 
 You can overwrite the whole image but you cant update some part of a image
 
 Imp: Docker containers are run in ISOLATED ENVIORMENT because it has its own OS hence it is a completely different enviorment, our local enviorment is different so we need to map port numbers
+
+Images are created in multiple stages 
