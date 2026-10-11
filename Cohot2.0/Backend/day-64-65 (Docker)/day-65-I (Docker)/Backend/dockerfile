@@ -1,0 +1,18 @@
+# . represent current working directory
+# RUN command will execute while creating an image
+# CMD command will execute in container means when image is created and running
+
+FROM node:20-alpine
+
+COPY ./package-lock.json . 
+COPY ./package.json . 
+#     (src/host)    (. Image)
+
+# This command will download node_modlues dependency folder
+RUN npm install
+
+# Copy whole Backend folder to image
+COPY . . 
+# When this copy command copy all the files of working directory then why we copied packages file seprately and Run npm install command why not copy whoel node_modules folder? -> We are using linux and node20 in docker container and this node_modules folder dependencies downloaded for windows version not for linux version, by copying packages and running npm install command will download node_modules dependencies for linux version or whatever os docker conatiner is using, also docker run instructions in stages so it doesn't have to download dependencies again and again if any changes happened in codebase
+
+CMD ["node", "server.js"]

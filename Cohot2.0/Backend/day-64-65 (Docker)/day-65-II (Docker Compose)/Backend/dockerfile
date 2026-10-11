@@ -1,0 +1,18 @@
+# . represent current working directory
+# RUN command will execute while creating an image
+# CMD command will execute in container means when image is created and running
+
+FROM node:20-alpine
+
+# This will create "app" folder in OS and put all the files in this
+WORKDIR /app
+
+# Now dest will be /app instead of .
+COPY ./package-lock.json /app  
+COPY ./package.json ./
+
+RUN npm install
+
+COPY . /app 
+
+CMD ["node", "server.js"]
