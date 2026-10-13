@@ -1,0 +1,14 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . ./
+
+# Application will expect traffic on port 3000, write it or not completely fine not that important
+EXPOSE 3000
+
+CMD ["node", "server.js"]

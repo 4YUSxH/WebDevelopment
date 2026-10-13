@@ -1,0 +1,37 @@
+# STAGE 1
+FROM node:20-alpine as frontend-build
+
+WORKDIR /app
+
+COPY ./Frontend/package*.json /app
+
+RUN npm install
+
+COPY ./Frontend /app
+
+RUN npm run build
+
+# Stage 1 will created an image with whole frontend folder where dist is also present
+# Both stages images are independent of each other. So we need to copy the dist folder from stage 1 to stage 2
+
+# STAGE 2
+FROM node:20-alpine 
+
+# Both /app folders are independent of each other
+WORKDIR /app
+
+COPY ./Backend/package*.json /app
+
+RUN npm install
+
+COPY ./Backend /app
+
+# Copying dist folder from stage 1 to stage 2
+COPY --from=frontend-build /app/dist /app/public
+# After this step, the dist folder will be present in the public folder of backend image
+
+CMD ["node", "server.js"]
+
+# Note: Only STAGE 2 image will be saved as final image. STAGE 1 image will be deleted after the build is completed
+
+# This dockerfile will create a single image for both frontend and backend means it is a fullstack application image 
