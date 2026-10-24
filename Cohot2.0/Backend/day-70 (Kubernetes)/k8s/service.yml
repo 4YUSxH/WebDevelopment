@@ -1,0 +1,17 @@
+# This file will transfer traffic to pods and manage pod's ip address automatically
+
+# Open deployment.yml in split view it will make easy to write values
+kind: Service
+apiVersion: v1
+metadata:
+  name:  express-service
+spec:
+  selector:
+    app:  express # Should be same as what you've write in deployment.yml
+  type:  ClusterIP
+  ports:
+  - name:  http
+    port:  80
+    targetPort:  3000 # Container's port(Find in deployment.yml)
+
+# Command: kubectl apply -f ./k8s/service.yml

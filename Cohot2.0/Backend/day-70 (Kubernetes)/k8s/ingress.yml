@@ -1,0 +1,30 @@
+# This file will transfer user's requests starting from "/" to express-service, These are only rules we need to install ingress controller(nginx) for implementing these rules
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: express-ingress
+  labels:
+    app.kubernetes.io/name: express-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: express-service
+              port: 
+                number: 80
+
+# Ingress Controller Setup: 
+  # Command - kubectl apply -f \
+# https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.1/deploy/static/provider/cloud/deploy.yaml
+
+# Above command will install ingress controller
+
+  # Command: kubectl apply -f ./k8s/ingress.yml
+
+# Above command will implement ingress rules written in this file

@@ -1,0 +1,35 @@
+# - This file manages your Pods:  
+  # - You tell it what image to run 
+  # - What resources each pod needs
+  # - Makes sure the desired number of application instances are running
+
+apiVersion: apps/v1 # API version for Deployments
+kind: Deployment
+metadata:
+  name: express-deployment # Deployment name
+spec:
+  replicas: 2 # Minimum replicas that should be always in running 
+  selector: # Used to identify pods
+    matchLabels: 
+      app: express  # Select Pods with label app=express
+  template: # Blueprint used to create new Pods
+    metadata: 
+      labels: 
+        app: express # Must match the selector above
+    spec: 
+      containers: 
+      - name: express-container # Container name
+        image: cohort_2_express:latest # Container image with its name
+        imagePullPolicy: Always  # Always attempt to pull the image
+        ports: 
+        - containerPort: 3000 # Port on which the app listens
+        resources:
+          limits: # Maximum resources the Container can use
+            memory: "128Mi"
+            cpu: "500m" # 1 cpu core = 1000 milli-cores 
+          requests: # Resources uses of a Container in ideal situation
+            memory: "64Mi"
+            cpu: "250m" 
+
+# Command: kuberctl apply -f ./k8s/deployment.yml
+#                     (filename)   (path)  
