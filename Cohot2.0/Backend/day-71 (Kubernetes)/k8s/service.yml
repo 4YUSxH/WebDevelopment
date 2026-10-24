@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  main-server-service
+spec:
+  selector:
+    app:  main-server # This service will transfer traffic to pods that has this main-server label(we gave this labels in deployment.yml)
+  type:  ClusterIP
+  ports:
+  - name:  name-of-the-port
+    port:  80
+    targetPort:  3000
